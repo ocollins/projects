@@ -39,8 +39,11 @@
 <p><a href="/java112/properties">Properties Servlet</a></p>
 <p><a href="/java112/trivial">Trivial Servlet</a></p>
 <p><a href="/java112/first112">First 112 Servlet</a></p>
-<h2>Unit 3</h2>
 
+<h2>Unit 3</h2>
+<p><a href="myFirstJSP.jsp">Lab 1 First JSP</a></p>
+<p><a href="expressions.jsp">Team Presentation Expressions</a></p>
+<p><a href="testFunction.jsp">Test Function</a></p>
 <h2>Unit 4</h2>
 
 

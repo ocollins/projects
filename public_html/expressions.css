@@ -1,0 +1,30 @@
+body {
+margin: 0;
+font-family: Tahoma, Geneva, sans-serif;
+text-align: center;
+}
+
+ .example1, .example2 {
+display: none;
+font-weight: bold;
+color: blue;
+}
+
+.servletDisplay {
+display: none;
+color: blue;
+}
+
+span {
+padding-left: 24px;
+padding-top: 40px;
+color: blue;    
+}
+
+span.sp1 {
+padding-left: 48px;
+}
+
+hr {
+width: 40%;
+}
