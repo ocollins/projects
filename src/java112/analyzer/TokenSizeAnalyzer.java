@@ -124,8 +124,8 @@ public class TokenSizeAnalyzer implements Analyzer{
     }
 
     /**
-    *  Build a histogram of the token lengths/occurances
-    *  @return Map container of token lengths/occurances in form of a histogram
+    *  Build a histogram of the token lengths/occurences
+    *  @return Map container of token lengths/occurences in form of a histogram
     */
     public TreeMap buildHistogram() {
         TreeMap<Integer, String> workMap = new TreeMap<Integer, String>();
@@ -148,7 +148,7 @@ public class TokenSizeAnalyzer implements Analyzer{
     }
 
     /**
-    *  Build a string of asterisks for each number of occurances
+    *  Build a string of asterisks for each number of occurences
     *  @param numberAsterisksIn number of asterisks to string together
     *  @return string of asterisks to be placed on the histogram
     */

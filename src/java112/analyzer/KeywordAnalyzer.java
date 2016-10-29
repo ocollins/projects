@@ -7,19 +7,22 @@ import  java.io.*;
 *  Java 112
 *  @author Olena Collins
 *  Text file analyzer application
-*  Token Count Analyzer Class 
+*  Keyword Analyzer Class 
 */
 
-public class TokenCountAnalyzer implements Analyzer{
-    private Map<String, Integer> tokenCounts;
+public class KeywordAnalyzer implements Analyzer{
+    private Map<String, List<Integer>> keywordMap;
     private Properties properties;
+    //store keyword position in the file    
+    private int tokenOccurence;
 
     /**
     *  Empty class constructor.
     *  Create an instance of the TreeMap. 
     */
-    public TokenCountAnalyzer() {
-        tokenCounts = new TreeMap<String, Integer>();
+    public KeywordAnalyzer() {
+        keywordMap = new TreeMap<String, List<Integer>>();
+        tokenOccurence = 0;
     }
 
     /**
@@ -27,11 +30,39 @@ public class TokenCountAnalyzer implements Analyzer{
     *  store properties data. 
     *  @param propertiesIn properties
     */
-    public TokenCountAnalyzer(Properties propertiesIn) {
+    public KeywordAnalyzer(Properties propertiesIn) {
 
         //Call empty constructor
         this();
-        properties = propertiesIn; 
+        properties = propertiesIn;
+        loadKeywordsFile(); 
+    }
+
+    /**
+    *  Load keywords from a file
+    */
+    public void loadKeywordsFile() {
+        ArrayList keywordsList = new ArrayList();
+        String lineIn = null;
+        
+        try (BufferedReader bufferedReader = 
+                new BufferedReader
+               (new FileReader(properties.getProperty("file.path.keywords")))) {
+            while (bufferedReader.ready()) {
+                lineIn = bufferedReader.readLine();
+                keywordsList.add(lineIn);
+            }
+        } catch (FileNotFoundException ex) {
+            System.out.println("Keywords file not found");
+            ex.printStackTrace();
+        } catch (IOException ioException) {
+            System.out.println("Problem reading the Keywords file");
+            ioException.printStackTrace();
+        } catch (Exception exception) {
+            System.out.println("Error processing the Keywords file");
+            exception.printStackTrace();
+        }    
+
     }
 
     /**
@@ -39,14 +70,15 @@ public class TokenCountAnalyzer implements Analyzer{
     *  @param token type String
     */
     public void processToken(String token) {
-        int tokenCounter = 0;
+        //bump up position counter
+        tokenOccurence++;
 
-        //Check if the token is already stored
-        //If so, add 1 to number of occurences and put it back to TreeMap
+        //Check if the token is a keyword
+        //If so, add 1 to number of occurnces and put it back to TreeMap
         if (tokenCounts.containsKey(token)) {
             tokenCounter = tokenCounts.get(token);
             tokenCounter ++;
-        //If first occurence of the token make token counter = 1
+        //If first occurance of the token make token counter = 1
         } else {   
             tokenCounter = 1;
         }
