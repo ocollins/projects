@@ -46,7 +46,6 @@ public class TokenCountAnalyzer implements Analyzer{
         if (tokenCounts.containsKey(token)) {
             tokenCounter = tokenCounts.get(token);
             tokenCounter ++;
-            tokenCounts.put(token, tokenCounter);
         //If first occurance of the token make token counter = 1
         } else {   
             tokenCounter = 1;

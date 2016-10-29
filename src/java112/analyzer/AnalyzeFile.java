@@ -79,6 +79,9 @@ public class AnalyzeFile {
 
         LexicalDensityAnalyzer lexicalDensityAnalyzer = new LexicalDensityAnalyzer(propertiesIn);
         analyzers.add(lexicalDensityAnalyzer);
+
+        TokenSizeAnalyzer tokenSizeAnalyzer = new TokenSizeAnalyzer(propertiesIn);
+        analyzers.add(tokenSizeAnalyzer);
     }
     
     /**
