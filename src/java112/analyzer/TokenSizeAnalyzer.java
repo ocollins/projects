@@ -64,8 +64,6 @@ public class TokenSizeAnalyzer implements Analyzer{
             maximumSize = lengthCount;
         }
         
-        System.out.println(token + " " + tokenLength + " " + lengthCount + " " + maximumSize);
-
     }
 
     /**
@@ -133,11 +131,12 @@ public class TokenSizeAnalyzer implements Analyzer{
         int maxLineLength = Integer.parseInt(properties.getProperty("maximum.line.length"));
         int numberAsterisks = 0;
         String asterisks = null;
-        System.out.println("max line length " + maxLineLength);
 
+        //Get number of occurences for each length from a Map container;
+        //Calculate how many asterisks should be built in proportion to the max
+        //number of asterisks.
         for (Map.Entry<Integer, Integer> entry : tokenSizes.entrySet()) {
             numberAsterisks = (maxLineLength * entry.getValue()) / maximumSize;
-            System.out.println("number of asterisks " + numberAsterisks);
             if (numberAsterisks < 1) {
                 numberAsterisks = 1;
             }
@@ -158,7 +157,6 @@ public class TokenSizeAnalyzer implements Analyzer{
         for(int i = 0; i < numberAsterisksIn; i++) {
             asterisksOut = asterisksOut + "*";      
         } 
-        System.out.println(asterisksOut);
         return asterisksOut;  
     }    
      

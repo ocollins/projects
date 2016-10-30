@@ -42,24 +42,26 @@ public class KeywordAnalyzer implements Analyzer{
     *  Load keywords from a file
     */
     public void loadKeywordsFile() {
-        ArrayList keywordsList = new ArrayList();
         String lineIn = null;
+        ArrayList<Integer> keywordPosition = null;
         
         try (BufferedReader bufferedReader = 
                 new BufferedReader
                (new FileReader(properties.getProperty("file.path.keywords")))) {
             while (bufferedReader.ready()) {
                 lineIn = bufferedReader.readLine();
-                keywordsList.add(lineIn);
+                keywordPosition = new ArrayList<Integer>();
+                keywordMap.put(lineIn, keywordPosition);
+                keywordPosition = null;
             }
         } catch (FileNotFoundException ex) {
-            System.out.println("Keywords file not found");
+            System.out.println("Keywords Input file not found");
             ex.printStackTrace();
         } catch (IOException ioException) {
-            System.out.println("Problem reading the Keywords file");
+            System.out.println("Problem reading the Keywords Input file");
             ioException.printStackTrace();
         } catch (Exception exception) {
-            System.out.println("Error processing the Keywords file");
+            System.out.println("Error processing the Keywords Input file");
             exception.printStackTrace();
         }    
 
@@ -70,37 +72,43 @@ public class KeywordAnalyzer implements Analyzer{
     *  @param token type String
     */
     public void processToken(String token) {
-        //bump up position counter
-        tokenOccurence++;
+        List<Integer> tokenPositionArray = null;
+        //bump up the token position count in the file
+        tokenOccurence ++;
 
         //Check if the token is a keyword
-        //If so, add 1 to number of occurnces and put it back to TreeMap
-        if (tokenCounts.containsKey(token)) {
-            tokenCounter = tokenCounts.get(token);
-            tokenCounter ++;
-        //If first occurance of the token make token counter = 1
-        } else {   
-            tokenCounter = 1;
-        }
-        tokenCounts.put(token, tokenCounter);
+        //If so, add 1 to number of occurnces, store it as position in the file
+        //Put it back into the Map container
+        if (keywordMap.containsKey(token)) {
+            tokenPositionArray = new ArrayList<Integer>();
+
+            //Get ArrayList of keyword positions from the Map container
+            tokenPositionArray = keywordMap.get(token);
+            //Add new position to the ArrayList
+            tokenPositionArray.add(tokenOccurence);
+            //Put keyword and ArrayList of positions back into the Map container
+            keywordMap.put(token, tokenPositionArray);
+        } 
+        
     }
 
     /**
-    *  Get Tokens count method
-    *  @return tokenCounts
+    *  Get Keyword Map method
+    *  @return keywordMap
     */
-    public Map getTokenCounts() {
-        return tokenCounts;
+    public Map<String, List<Integer>> getKeywordMap() {
+        return keywordMap;
     }
 
     /**
-    *  Produce a List of Unique tokens counts.
+    *  Produce a List of keywords and their positions in the file.
     *  Write the list into a file.
     *  @param inputFilePath name of input file
     */
     public void writeOutputFile(String inputFilePath) {
         //Get name of the output file from the properties file
-        String outputFilePath = properties.getProperty("output.file.token.count");
+        String outputFilePath = properties.getProperty("output.file.keyword.report");
+        System.out.println("keyword file " + outputFilePath);
         
         //Get name of the output directory
         String outputDirectory = properties.getProperty("output.dir");
@@ -109,14 +117,18 @@ public class KeywordAnalyzer implements Analyzer{
                 new BufferedWriter(new FileWriter(outputDirectory + outputFilePath));
                 PrintWriter printWriter = 
                 new PrintWriter(bufferedWriter)) {
-            for (Map.Entry<String, Integer> entry : tokenCounts.entrySet()) {
-                printWriter.println(entry.getKey() + "\t" + entry.getValue());
+            for (Map.Entry<String, List<Integer>> entry : keywordMap.entrySet()) {
+                if(!entry.getValue().isEmpty()) {
+                    printWriter.println(entry.getKey() + "\t" + entry.getValue());
+                    System.out.print(entry.getKey());
+                    System.out.println(entry.getValue());
+                }
             }
         } catch (IOException iOException) {
-            System.out.println("Cannot write Unique Tokens Count Report file");
+            System.out.println("Cannot write Keyword Map Report file");
             iOException.printStackTrace();  
         } catch (Exception exception) {
-            System.out.println("Error processig Unique Tokens Count Report file");
+            System.out.println("Error processig KeywordMap Report file");
             exception.printStackTrace();
         }    
     }

@@ -82,6 +82,9 @@ public class AnalyzeFile {
 
         TokenSizeAnalyzer tokenSizeAnalyzer = new TokenSizeAnalyzer(propertiesIn);
         analyzers.add(tokenSizeAnalyzer);
+
+        KeywordAnalyzer keywordAnalyzer = new KeywordAnalyzer(propertiesIn);
+        analyzers.add(keywordAnalyzer);
     }
     
     /**
