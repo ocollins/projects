@@ -118,10 +118,8 @@ public class KeywordAnalyzer implements Analyzer{
                 PrintWriter printWriter = 
                 new PrintWriter(bufferedWriter)) {
             for (Map.Entry<String, List<Integer>> entry : keywordMap.entrySet()) {
-                if(!entry.getValue().isEmpty()) {
-                    printWriter.println(entry.getKey() + "\t" + entry.getValue());
-                    System.out.print(entry.getKey());
-                    System.out.println(entry.getValue());
+                if (!entry.getValue().isEmpty()) {
+                    writeOutputLines(entry);
                 }
             }
         } catch (IOException iOException) {
@@ -132,5 +130,34 @@ public class KeywordAnalyzer implements Analyzer{
             exception.printStackTrace();
         }    
     }
-     
+
+    /**
+     *  Method that will eveluate number of members in the ArrayList in the Map for each keyword;
+     *  Up to 10 members will be written per line into the output file;
+     *  @param entryIn list of keywords and ArrayList of keyword locations in the input file;
+     */
+    public void writeOutputLines(Map.Entry<String, List<Integer>> entryIn) {
+        int numberOfLocations = 0;
+        int numberOfLocationsLeft = 0;
+        int numberOfLines = 0;
+        int arrayIndex = 0;
+
+        List<Integer> locations = new ArrayList <Integer>();
+        locations = entryIn.getValue();
+        numberOfLocations = locations.size();
+        numberOfLines = numberOfLocations / 10;
+        numberOfLocationsLeft = numberOfLocations - numberOfLines * 10;
+
+        if (numberOfLocations < 11) {
+                printWriter.pri|ntln(entry.getKey() + "\t" + entry.getValue());
+            } else {
+                for (int x = 0; x < numberOfLines; x ++) {
+
+                }
+
+            }
+
+
+    }
+
 }
