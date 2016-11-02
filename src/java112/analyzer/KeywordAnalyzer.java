@@ -77,7 +77,7 @@ public class KeywordAnalyzer implements Analyzer{
         tokenOccurence ++;
 
         //Check if the token is a keyword
-        //If so, add 1 to number of occurnces, store it as position in the file
+        //If so, store its position in the file
         //Put it back into the Map container
         if (keywordMap.containsKey(token)) {
             tokenPositionArray = new ArrayList<Integer>();
@@ -119,7 +119,7 @@ public class KeywordAnalyzer implements Analyzer{
                 new PrintWriter(bufferedWriter)) {
             for (Map.Entry<String, List<Integer>> entry : keywordMap.entrySet()) {
                 if (!entry.getValue().isEmpty()) {
-                    writeOutputLines(entry);
+                    writeOutputLines(entry, printWriter);
                 }
             }
         } catch (IOException iOException) {
@@ -136,7 +136,7 @@ public class KeywordAnalyzer implements Analyzer{
      *  Up to 10 members will be written per line into the output file;
      *  @param entryIn list of keywords and ArrayList of keyword locations in the input file;
      */
-    public void writeOutputLines(Map.Entry<String, List<Integer>> entryIn) {
+    public void writeOutputLines(Map.Entry<String, List<Integer>> entryIn, PrintWriter printWriter) {
         int numberOfLocations = 0;
         int numberOfLocationsLeft = 0;
         int numberOfLines = 0;
@@ -148,15 +148,32 @@ public class KeywordAnalyzer implements Analyzer{
         numberOfLines = numberOfLocations / 10;
         numberOfLocationsLeft = numberOfLocations - numberOfLines * 10;
 
+        //If the are only 10, or less locations for a keyword, print the whole ArrayList of locations
         if (numberOfLocations < 11) {
-                printWriter.pri|ntln(entry.getKey() + "\t" + entry.getValue());
+                printWriter.println(entry.getKey() + "\t" + entry.getValue());
+        //If there are more than 10 locations to print, split the locations into more lines
             } else {
                 for (int x = 0; x < numberOfLines; x ++) {
-
+                    printALine(,printWriter)
                 }
 
             }
 
+
+    }
+
+    /**
+     *  Iterate over members of ArrayList of locations up to 10 times, and produce a line
+     *  @param startIndex Starting index in the ArrayList
+     *  @param numIterations Number of times to iterate over ArrayList members
+     *  @param locationIn ArrayList of token locations
+     *  @return next Index to be processed in the ArrayList of token locations
+     */
+    public int printALine(int startIndex, int numIterations, ArrayList<Integer> locationIn, PrintWriter printWriter) {
+        for(int i = startIndex; x ++; x < numIterations) {
+
+
+        }
 
     }
 
