@@ -52,6 +52,7 @@ public class BigWordAnalyzer implements Analyzer{
     *  @return bigWords
     */
     public Set<String> getBigWords() {
+
         return bigWords;
     }
 

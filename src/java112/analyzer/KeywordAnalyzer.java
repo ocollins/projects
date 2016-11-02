@@ -11,7 +11,7 @@ import  java.io.*;
 */
 
 public class KeywordAnalyzer implements Analyzer{
-    private Map<String, List<Integer>> keywordMap;
+    private Map<String, ArrayList<Integer>> keywordMap;
     private Properties properties;
     //store keyword position in the file    
     private int tokenOccurence;
@@ -21,7 +21,7 @@ public class KeywordAnalyzer implements Analyzer{
     *  Create an instance of the TreeMap. 
     */
     public KeywordAnalyzer() {
-        keywordMap = new TreeMap<String, List<Integer>>();
+        keywordMap = new TreeMap<String, ArrayList<Integer>>();
         tokenOccurence = 0;
     }
 
@@ -72,7 +72,7 @@ public class KeywordAnalyzer implements Analyzer{
     *  @param token type String
     */
     public void processToken(String token) {
-        List<Integer> tokenPositionArray = null;
+        ArrayList<Integer> tokenPositionArray = null;
         //bump up the token position count in the file
         tokenOccurence ++;
 
@@ -96,7 +96,7 @@ public class KeywordAnalyzer implements Analyzer{
     *  Get Keyword Map method
     *  @return keywordMap
     */
-    public Map<String, List<Integer>> getKeywordMap() {
+    public Map<String, ArrayList<Integer>> getKeywordMap() {
         return keywordMap;
     }
 
@@ -117,10 +117,8 @@ public class KeywordAnalyzer implements Analyzer{
                 new BufferedWriter(new FileWriter(outputDirectory + outputFilePath));
                 PrintWriter printWriter = 
                 new PrintWriter(bufferedWriter)) {
-            for (Map.Entry<String, List<Integer>> entry : keywordMap.entrySet()) {
-                if (!entry.getValue().isEmpty()) {
-                    writeOutputLines(entry, printWriter);
-                }
+            for (Map.Entry<String, ArrayList<Integer>> entry : keywordMap.entrySet()) {
+                writeOutputLines(entry, printWriter);
             }
         } catch (IOException iOException) {
             System.out.println("Cannot write Keyword Map Report file");
@@ -132,33 +130,54 @@ public class KeywordAnalyzer implements Analyzer{
     }
 
     /**
-     *  Method that will eveluate number of members in the ArrayList in the Map for each keyword;
+     *  Method that will evaluate number of members in the ArrayList in the Map for each keyword;
      *  Up to 10 members will be written per line into the output file;
-     *  @param entryIn list of keywords and ArrayList of keyword locations in the input file;
+     *  @param entry list of keywords and ArrayList of keyword locations in the input file;
      */
-    public void writeOutputLines(Map.Entry<String, List<Integer>> entryIn, PrintWriter printWriter) {
+    public void writeOutputLines(Map.Entry<String, ArrayList<Integer>> entry, PrintWriter printWriter) {
         int numberOfLocations = 0;
         int numberOfLocationsLeft = 0;
         int numberOfLines = 0;
         int arrayIndex = 0;
+        int startIndex = 0;
+        int numberOfIterations = 0;
+        int nextIndex = 0;
+        String eol = System.getProperty("line.separator");
+        boolean printComma = false;
 
-        List<Integer> locations = new ArrayList <Integer>();
-        locations = entryIn.getValue();
+        String keyword = entry.getKey();
+        ArrayList<Integer> locations = new ArrayList <Integer>();
+        locations = entry.getValue();
         numberOfLocations = locations.size();
         numberOfLines = numberOfLocations / 10;
         numberOfLocationsLeft = numberOfLocations - numberOfLines * 10;
 
-        //If the are only 10, or less locations for a keyword, print the whole ArrayList of locations
+        //This will control printing a comma at the end of the line
+        if (numberOfLocationsLeft > 0) {
+            printComma = true;
+        }
+
+        //If the are only 10 or less locations for a keyword, print the whole ArrayList of locations
         if (numberOfLocations < 11) {
-                printWriter.println(entry.getKey() + "\t" + entry.getValue());
+                printWriter.println(keyword + " = " + eol + locations);
         //If there are more than 10 locations to print, split the locations into more lines
-            } else {
-                for (int x = 0; x < numberOfLines; x ++) {
-                    printALine(,printWriter)
-                }
-
+        } else {
+            //Produce all complete lines
+            startIndex = 0;
+            numberOfIterations = 10;
+            printWriter.println(keyword + " = ");
+            printWriter.print("[");
+            for (int x = 0; x < numberOfLines; x ++) {
+                nextIndex = printALine(startIndex, numberOfIterations, locations, printWriter, printComma);
+                startIndex = nextIndex;
             }
-
+            //Produce a partial line if needed to print the locations that are left
+            if (numberOfLocationsLeft > 0) {
+                printComma = false;
+                nextIndex = printALine(startIndex, numberOfLocationsLeft, locations, printWriter, printComma);
+            }
+            printWriter.println("]");
+        }
 
     }
 
@@ -167,13 +186,27 @@ public class KeywordAnalyzer implements Analyzer{
      *  @param startIndex Starting index in the ArrayList
      *  @param numIterations Number of times to iterate over ArrayList members
      *  @param locationIn ArrayList of token locations
+     *  @param printComma a flag, which will control if a comma will be printed at the end of line
      *  @return next Index to be processed in the ArrayList of token locations
      */
-    public int printALine(int startIndex, int numIterations, ArrayList<Integer> locationIn, PrintWriter printWriter) {
-        for(int i = startIndex; x ++; x < numIterations) {
+    public int printALine(int startIndex, int numOfIterations, ArrayList<Integer> locations,
+                          PrintWriter printWriter, boolean printComma) {
+        int nextIndex = 0;
+        //index to access members of ArrayList
+        int index = startIndex;
+        for(int x = 0; x < numOfIterations; x ++) {
+            if ((x == numOfIterations - 1) && !printComma) {
+                printWriter.print(Integer.toString(locations.get(index)));
 
-
+            } else {
+                printWriter.print(Integer.toString(locations.get(index)) + ",");
+            }
+            index ++;
         }
+        printWriter.println(" ");
+
+        nextIndex = index;
+        return nextIndex;
 
     }
 
