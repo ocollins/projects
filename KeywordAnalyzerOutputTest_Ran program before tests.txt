@@ -1,0 +1,44 @@
+Testsuite: java112.tests.KeywordAnalyzerOutputTest
+Tests run: 8, Failures: 3, Errors: 2, Skipped: 0, Time elapsed: 0.063 sec
+------------- Standard Output ---------------
+keyword file test_keywords.txt
+output directory output/
+------------- ---------------- ---------------
+
+Testcase: classExists took 0.009 sec
+Testcase: writeOutputFileExistsTest took 0 sec
+Testcase: outputLineOneTest took 0.002 sec
+	FAILED
+expected:<and =[]> but was:<and =[ ]>
+junit.framework.AssertionFailedError: expected:<and =[]> but was:<and =[ ]>
+	at java112.tests.KeywordAnalyzerOutputTest.outputLineOneTest(KeywordAnalyzerOutputTest.java:100)
+
+Testcase: outputLineTwoTest took 0 sec
+Testcase: outputLineFourTest took 0.001 sec
+	FAILED
+expected:<[if =]> but was:<[[3, 9]]>
+junit.framework.AssertionFailedError: expected:<[if =]> but was:<[[3, 9]]>
+	at java112.tests.KeywordAnalyzerOutputTest.outputLineFourTest(KeywordAnalyzerOutputTest.java:110)
+
+Testcase: outputLineFiveTest took 0 sec
+	FAILED
+expected:<[[3, 9]]> but was:<[the = ]>
+junit.framework.AssertionFailedError: expected:<[[3, 9]]> but was:<[the = ]>
+	at java112.tests.KeywordAnalyzerOutputTest.outputLineFiveTest(KeywordAnalyzerOutputTest.java:115)
+
+Testcase: outputLineSevenTest took 0 sec
+	Caused an ERROR
+Index: 6, Size: 6
+java.lang.IndexOutOfBoundsException: Index: 6, Size: 6
+	at java.util.ArrayList.rangeCheck(ArrayList.java:653)
+	at java.util.ArrayList.get(ArrayList.java:429)
+	at java112.tests.KeywordAnalyzerOutputTest.outputLineSevenTest(KeywordAnalyzerOutputTest.java:120)
+
+Testcase: outputLineEightTest took 0 sec
+	Caused an ERROR
+Index: 7, Size: 6
+java.lang.IndexOutOfBoundsException: Index: 7, Size: 6
+	at java.util.ArrayList.rangeCheck(ArrayList.java:653)
+	at java.util.ArrayList.get(ArrayList.java:429)
+	at java112.tests.KeywordAnalyzerOutputTest.outputLineEightTest(KeywordAnalyzerOutputTest.java:125)
+

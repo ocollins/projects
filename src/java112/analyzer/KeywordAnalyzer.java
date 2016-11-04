@@ -97,6 +97,7 @@ public class KeywordAnalyzer implements Analyzer{
     *  @return keywordMap
     */
     public Map<String, ArrayList<Integer>> getKeywordMap() {
+
         return keywordMap;
     }
 
@@ -107,11 +108,12 @@ public class KeywordAnalyzer implements Analyzer{
     */
     public void writeOutputFile(String inputFilePath) {
         //Get name of the output file from the properties file
-        String outputFilePath = properties.getProperty("output.file.keyword.report");
+        String outputFilePath = properties.getProperty("output.file.keyword");
         System.out.println("keyword file " + outputFilePath);
         
         //Get name of the output directory
         String outputDirectory = properties.getProperty("output.dir");
+        System.out.println("output directory " + outputDirectory);
             
         try(BufferedWriter bufferedWriter = 
                 new BufferedWriter(new FileWriter(outputDirectory + outputFilePath));
@@ -195,15 +197,16 @@ public class KeywordAnalyzer implements Analyzer{
         //index to access members of ArrayList
         int index = startIndex;
         for(int x = 0; x < numOfIterations; x ++) {
-            if ((x == numOfIterations - 1) && !printComma) {
+            if (x == numOfIterations - 1) {
                 printWriter.print(Integer.toString(locations.get(index)));
-
             } else {
-                printWriter.print(Integer.toString(locations.get(index)) + ",");
+                printWriter.print(Integer.toString(locations.get(index)) + ", ");
             }
             index ++;
         }
-        printWriter.println(" ");
+        if (printComma) {
+            printWriter.println(",");
+        }
 
         nextIndex = index;
         return nextIndex;

@@ -2,6 +2,7 @@ package java112.analyzer;
 
 import  java.util.*;
 import  java.io.*;
+import  java.lang.Integer;
 
 /**
 *  Java 112
@@ -35,7 +36,6 @@ public class TokenSizeAnalyzer implements Analyzer{
         this();
         //Get minimum word length from .properties file
         properties = propertiesIn; 
-        //mimimumWordLenth = Integer.parseInt(properties.getProperty("bigwords.minimum.length"));
     }
 
     /**
@@ -71,6 +71,7 @@ public class TokenSizeAnalyzer implements Analyzer{
     *  @return tokenSizes
     */
     public Map<Integer, Integer> getTokenSizes() {
+
         return tokenSizes;
     }
 
@@ -79,6 +80,7 @@ public class TokenSizeAnalyzer implements Analyzer{
     *  @return maximumSize
     */
     public int getMaximumSize() {
+
         return maximumSize;
     }
 
@@ -128,7 +130,9 @@ public class TokenSizeAnalyzer implements Analyzer{
     public TreeMap buildHistogram() {
         TreeMap<Integer, String> workMap = new TreeMap<Integer, String>();
         //Get maximum line length
-        int maxLineLength = Integer.parseInt(properties.getProperty("maximum.line.length"));
+        String maxLineLengthString = properties.getProperty("maximum.line.length");
+        int maxLineLength = Integer.parseInt(maxLineLengthString);
+
         int numberAsterisks = 0;
         String asterisks = null;
 
