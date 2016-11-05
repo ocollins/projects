@@ -38,7 +38,7 @@ public class Lab33Servlet extends HttpServlet {
         map.put("aDate", new Date());
         request.setAttribute("myMap", map);
 
-        String url = "/lab33.jsp";
+        String url = "/Lab33.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
 
