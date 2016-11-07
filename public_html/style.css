@@ -59,6 +59,17 @@ font-family: Arial, Helvetica, sans-serif;
 background: url(images/menu_border.png);
 }
 
+ul.requestData li {
+padding-bottom: 20px;
+color: #1F1507;
+}
+
+ul.requestData span, strong{
+margin-right: 30px;
+color: #1F1507;
+}
+
+
 #main {
 float: left;
 width: 100%;

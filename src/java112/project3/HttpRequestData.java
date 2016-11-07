@@ -30,7 +30,7 @@ public class HttpRequestData extends java.lang.Object {
      *  Sets the remote computer attribute
      *  @param  remoteComputer name of remote computer
      */
-    public void setRemoteComputerName(String remoteComputerName) {
+    public void  setRemoteComputerName(String remoteComputerName) {
         this.remoteComputerName = remoteComputerName;
     }
 

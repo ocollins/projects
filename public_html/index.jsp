@@ -47,6 +47,8 @@
     <p><a href="Lab23JSP.jsp">Lab 23 JSP</a></p>
     <p><a href="/java112/lab33">Lab 33 Servlet</a></p>
     <p><a href="/java112/mvc-demo">Mvc Demo Lab</a></p>
+    <p><a href="/java112/httpServlet">HTTP Request Data</a></p>
+    <p><a href="/project3-properties">Project 3 Properties</a></p>
 
 <h2>Unit 4</h2>
 
