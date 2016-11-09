@@ -26,11 +26,30 @@
 </ul>
 </div>
 
+<h1 class="project3Properties">${myProject3Properties.getProperty("application.name")}</h1>
 
-<!--<p><strong>Remote computer name</strong></p>
-<p>${Project3_Properties.getProperty("author")}</p>-->
+<table class="propertiesTable">
+    <tr><td><strong>Author </strong></td>
+    <td>${myProject3Properties.getProperty("author")}</td></tr>
 
+    <tr><td><strong>Email </strong></td>
+    <td>${myProject3Properties.getProperty("author.email.address")}</td></tr>
 
+    <tr><td><strong>Course </strong></td>
+    <td>${myProject3Properties.getProperty("course.title")}</td></tr>
+
+    <tr><td><strong>Meeting Days </strong></td>
+    <td>${myProject3Properties.getProperty("course.meeting")}</td></tr>
+
+    <tr><td><strong>Instuctor </strong></td>
+    <td>${myProject3Properties.getProperty("instructor.name")}</td></tr>
+
+    <tr><td><strong>Project Description </strong></td>
+    <td>${myProject3Properties.getProperty("project.description")}</td></tr>
+
+</table>
+
+<p><a href="/java112">HOME</a></p>
 
 <!-- footer -->
 <div id="footer">

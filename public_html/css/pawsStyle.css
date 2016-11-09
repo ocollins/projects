@@ -2,7 +2,12 @@ body {
 padding: 50px 100px;
 margin: 0;
 font-family: Tahoma, Geneva, sans-serif;
-background-image: url(images/body_bg.png);
+background-image: url(images/paws_bg.jpeg);
+
+}
+
+table {
+background-image: url(images/paw_bg.jpeg);    
 }
 
 #container {

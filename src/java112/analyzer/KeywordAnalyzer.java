@@ -100,7 +100,6 @@ public class KeywordAnalyzer implements Analyzer{
 
         return keywordMap;
     }
-
     /**
     *  Produce a List of keywords and their positions in the file.
     *  Write the list into a file.
@@ -109,12 +108,10 @@ public class KeywordAnalyzer implements Analyzer{
     public void writeOutputFile(String inputFilePath) {
         //Get name of the output file from the properties file
         String outputFilePath = properties.getProperty("output.file.keyword");
-        System.out.println("keyword file " + outputFilePath);
-        
+
         //Get name of the output directory
         String outputDirectory = properties.getProperty("output.dir");
-        System.out.println("output directory " + outputDirectory);
-            
+
         try(BufferedWriter bufferedWriter = 
                 new BufferedWriter(new FileWriter(outputDirectory + outputFilePath));
                 PrintWriter printWriter = 
@@ -136,7 +133,8 @@ public class KeywordAnalyzer implements Analyzer{
      *  Up to 10 members will be written per line into the output file;
      *  @param entry list of keywords and ArrayList of keyword locations in the input file;
      */
-    public void writeOutputLines(Map.Entry<String, ArrayList<Integer>> entry, PrintWriter printWriter) {
+    public void writeOutputLines(Map.Entry<String, ArrayList<Integer>> entry, PrintWriter
+                                 printWriter) {
         int numberOfLocations = 0;
         int numberOfLocationsLeft = 0;
         int numberOfLines = 0;
@@ -144,7 +142,6 @@ public class KeywordAnalyzer implements Analyzer{
         int startIndex = 0;
         int numberOfIterations = 0;
         int nextIndex = 0;
-        String eol = System.getProperty("line.separator");
         boolean printComma = false;
 
         String keyword = entry.getKey();
@@ -161,22 +158,24 @@ public class KeywordAnalyzer implements Analyzer{
 
         //If the are only 10 or less locations for a keyword, print the whole ArrayList of locations
         if (numberOfLocations < 11) {
-                printWriter.println(keyword + " = " + eol + locations);
+            printWriter.println(keyword + " =" + "\n" + locations + "\n");
+
         //If there are more than 10 locations to print, split the locations into more lines
         } else {
             //Produce all complete lines
             startIndex = 0;
             numberOfIterations = 10;
-            printWriter.println(keyword + " = ");
+            printWriter.println(keyword + " =");
             printWriter.print("[");
             for (int x = 0; x < numberOfLines; x ++) {
-                nextIndex = printALine(startIndex, numberOfIterations, locations, printWriter, printComma);
+                nextIndex = printALine(startIndex, numberOfIterations, locations, printWriter,
+                                       printComma);
                 startIndex = nextIndex;
             }
             //Produce a partial line if needed to print the locations that are left
             if (numberOfLocationsLeft > 0) {
                 printComma = false;
-                nextIndex = printALine(startIndex, numberOfLocationsLeft, locations, printWriter, printComma);
+                nextIndex = printALine(startIndex, numberOfLocationsLeft, locations, printWriter,                                                 printComma);
             }
             printWriter.println("]");
         }

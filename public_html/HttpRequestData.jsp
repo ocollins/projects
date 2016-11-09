@@ -65,6 +65,8 @@
 
 </ul>
 
+<p><a href="/java112">HOME</a></p>
+
 <!-- footer -->
 <div id="footer">
 

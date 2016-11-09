@@ -28,7 +28,7 @@ public class HttpRequestServlet extends HttpServlet {
         response.setContentType("text/html");
         HttpRequestData httpData = new HttpRequestData();
 
-        httpData.setRemoteComputerName(request.getHeaderNames().toString());
+        httpData.setRemoteComputerName(request.getRemoteHost());
         httpData.setRemoteComputerAddress(request.getRemoteAddr());
         httpData.setHttpMethod(request.getMethod());
         httpData.setRequestURI(request.getRequestURI());
@@ -40,6 +40,7 @@ public class HttpRequestServlet extends HttpServlet {
         httpData.setQueryString(request.getQueryString());
         httpData.setQueryParam(request.getParameter("queryParameter"));
         httpData.setUserAgent(request.getHeader("User-Agent"));
+
         request.setAttribute("HttpRequstData", httpData);
 
         String url = "/HttpRequestData.jsp";

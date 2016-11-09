@@ -3,6 +3,7 @@ package java112.analyzer;
 import  java.util.*;
 import  java.io.*;
 import  java.lang.Integer;
+import  java.util.Arrays;
 
 /**
 *  Java 112
@@ -15,6 +16,7 @@ public class TokenSizeAnalyzer implements Analyzer{
     private Map<Integer, Integer> tokenSizes;
     private Properties properties;
     private static int maximumSize;
+    private String[][] verticalHistogram = new String[25][72];
 
     /**
     *  Empty class constructor.
@@ -106,12 +108,27 @@ public class TokenSizeAnalyzer implements Analyzer{
                 new PrintWriter(bufferedWriter)) {
             //Write out the token lengths/count part of the report
             for (Map.Entry<Integer, Integer> entry : tokenSizes.entrySet()) {
-                printWriter.println( entry.getKey() + " " + entry.getValue());
+                printWriter.println( entry.getKey() + "\t" + entry.getValue());
             }
-    
-            //Write out the histogram part of the report
+
+            printWriter.println("\n" + "Horizontal histogram of the results" + "\n");
+            //Write out the horizontal histogram part of the report
             for (Map.Entry <Integer, String> entry : histoMap.entrySet()) {
                 printWriter.println(entry.getKey() + " " + entry.getValue());
+            }
+
+            printWriter.println("\n" + "Vertical histogram of the results" + "\n");
+            //Write out the vertical histogram part of the report
+            for (int y = 71; y >= 0; y --) {
+                //System.out.println("y " + y);
+                for (int x = 0; x < 25; x ++) {
+                    if (verticalHistogram[x][y] == null) {
+                        printWriter.print("   ");
+                    } else {
+                        printWriter.print(verticalHistogram[x][y] + " ");
+                    }
+                }
+                printWriter.println();
             }
             
         } catch (IOException iOException) {
@@ -129,23 +146,38 @@ public class TokenSizeAnalyzer implements Analyzer{
     */
     public TreeMap buildHistogram() {
         TreeMap<Integer, String> workMap = new TreeMap<Integer, String>();
-        //Get maximum line length
-        String maxLineLengthString = properties.getProperty("maximum.line.length");
-        int maxLineLength = Integer.parseInt(maxLineLengthString);
-
+        int maxLineLength = 70;
         int numberAsterisks = 0;
+        Integer tokenLength = 0;
         String asterisks = null;
+        int verticalX = 0;
+        int verticalY = 0;
 
         //Get number of occurences for each length from a Map container;
         //Calculate how many asterisks should be built in proportion to the max
         //number of asterisks.
         for (Map.Entry<Integer, Integer> entry : tokenSizes.entrySet()) {
             numberAsterisks = (maxLineLength * entry.getValue()) / maximumSize;
+
             if (numberAsterisks < 1) {
                 numberAsterisks = 1;
             }
-            asterisks = buildAsterisks(numberAsterisks);
-            workMap.put(entry.getKey(), asterisks);   
+            tokenLength = entry.getKey();
+            //Store token lengths in the array for printing on vertical histogram.
+            //They will be stored in to the 0 row of the array.
+            //If token length is one byte, add a space to allign them with two-byte
+            //values.
+            if (tokenLength.toString().length() == 1) {
+                verticalHistogram[verticalX][0] = tokenLength.toString() + " ";
+            } else {
+                verticalHistogram[verticalX][0] = tokenLength.toString();
+            }
+            //Build rows of asterisks for the horizontal histogram
+            //Build array of asterisks for the vertical histogram
+            asterisks = buildAsterisks(numberAsterisks, verticalX);
+
+            verticalX ++;
+            workMap.put(tokenLength, asterisks);
         }
         return workMap;    
     }
@@ -155,11 +187,14 @@ public class TokenSizeAnalyzer implements Analyzer{
     *  @param numberAsterisksIn number of asterisks to string together
     *  @return string of asterisks to be placed on the histogram
     */
-    public String buildAsterisks(int numberAsterisksIn) {
+    public String buildAsterisks(int numberAsterisksIn, int verticalX) {
         String asterisksOut = "";
+        int verticalY = 1;
         
         for(int i = 0; i < numberAsterisksIn; i++) {
-            asterisksOut = asterisksOut + "*";      
+            asterisksOut = asterisksOut + "*";
+            verticalHistogram[verticalX][verticalY] = "* ";
+            verticalY ++;
         } 
         return asterisksOut;  
     }    

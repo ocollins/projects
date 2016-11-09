@@ -56,10 +56,14 @@ public class PropertiesServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
+        log("First place");
 
-        request.setAttribute("Project3_Properties", projectProperties);
-        String url = "/java112/Project3_Properties.jsp";
+        request.setAttribute("myProject3Properties", projectProperties);
+        log("second place");
+        String url = "/Project3_Properties.jsp";
+        log("third place");
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+        log("Fourth place");
         dispatcher.forward(request, response);
     }
 
