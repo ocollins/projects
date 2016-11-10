@@ -5,39 +5,35 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <title>Tic Tac Paws</title>
     <link href="css/pawsStyle.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
 <div id="container">
     <!-- header -->
-    <div id="header">
-
-    <div id="logo"><a href="#">Tic Tac Paws</a></div>
+<div id="header">
+</div>
 </div>
 
 
 <h1 class="pageHeader">Tic Tac Paws</h1>
 
-<table class="gameTable">
-    <tr>
-        <td>AA</td>
-        <td>AB</td>
-        <td>AC</td>
-    </tr>
-    <tr>
-        <td>BA</td>
-        <td>BB</td>
-        <td>BC</td>
-    </tr>
-    <tr>
-        <td>CA</td>
-        <td>CB</td>
-        <td>CC</td>
-    </tr>
-    
-</table>
+<form action="/java112/TicTacPawsServlet" method="GET">
+<div id="form_container">
+<INPUT TYPE="button" NAME="sqr1" class="tictac" value="     " onClick="value ='1'">
+<INPUT TYPE="button" NAME="sqr2" class="tictac" value="     " onClick="value ='1'">
+<INPUT TYPE="button" NAME="sqr3" class="tictac" value="     " onClick="value ='1'"><br />
+<INPUT TYPE="button" NAME="sqr4" class="tictac" value="     " onClick="value ='1'">
+<INPUT TYPE="button" NAME="sqr5" class="tictac" value="     " onClick="value ='1'">
+<INPUT TYPE="button" NAME="sqr6" class="tictac" value="     " onClick="value ='1'"><br />
+<INPUT TYPE="button" NAME="sqr7" class="tictac" value="     " onClick="value ='1'">
+<INPUT TYPE="button" NAME="sqr8" class="tictac" value="     " onClick="value ='1'">
+<INPUT TYPE="button" NAME="sqr9" class="tictac" value="     " onClick="value ='1'">
+</div>
+</form>
+
+<label class="feedback">${ticTac.message}</label>
 
 
 <!-- footer -->

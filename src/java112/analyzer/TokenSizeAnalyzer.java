@@ -51,7 +51,6 @@ public class TokenSizeAnalyzer implements Analyzer{
     public void processToken(String token) {
         int tokenLength = token.length();
         int lengthCount = 0;
-           
 
         //Check if token length is already in the Map container
         if(tokenSizes.containsKey(tokenLength)) {
@@ -65,7 +64,6 @@ public class TokenSizeAnalyzer implements Analyzer{
         if (lengthCount > maximumSize) {
             maximumSize = lengthCount;
         }
-        
     }
 
     /**
@@ -82,7 +80,6 @@ public class TokenSizeAnalyzer implements Analyzer{
     *  @return maximumSize
     */
     public int getMaximumSize() {
-
         return maximumSize;
     }
 
@@ -150,6 +147,7 @@ public class TokenSizeAnalyzer implements Analyzer{
         int numberAsterisks = 0;
         Integer tokenLength = 0;
         String asterisks = null;
+        //X and Y coordinates for vertical histogram
         int verticalX = 0;
         int verticalY = 0;
 
@@ -185,10 +183,12 @@ public class TokenSizeAnalyzer implements Analyzer{
     /**
     *  Build a string of asterisks for each number of occurences
     *  @param numberAsterisksIn number of asterisks to string together
+     * @param verticalX X-coordinate for vertical histogram
     *  @return string of asterisks to be placed on the histogram
     */
     public String buildAsterisks(int numberAsterisksIn, int verticalX) {
         String asterisksOut = "";
+        //Y coordinate for vertical histogram
         int verticalY = 1;
         
         for(int i = 0; i < numberAsterisksIn; i++) {

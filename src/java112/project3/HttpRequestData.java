@@ -23,7 +23,7 @@ public class HttpRequestData extends java.lang.Object {
      *  Constructor for the HttpRequestData class
      */
     public HttpRequestData() {
-        //mySpecialData  = "default value";
+
     }
 
     /**
@@ -31,7 +31,8 @@ public class HttpRequestData extends java.lang.Object {
      *  @param  remoteComputer name of remote computer
      */
     public void  setRemoteComputerName(String remoteComputerName) {
-        this.remoteComputerName = remoteComputerName;
+
+		this.remoteComputerName = remoteComputerName;
     }
 
     /**
@@ -39,7 +40,8 @@ public class HttpRequestData extends java.lang.Object {
      *@return remoteCompute value
      */
     public String getRemoteComputerName() {
-        return remoteComputerName;
+
+		return remoteComputerName;
     }
 
     /**
@@ -55,7 +57,8 @@ public class HttpRequestData extends java.lang.Object {
      *  @return remoteComputerAddress value
      */
     public String getRemoteComputerAddress() {
-        return remoteComputerAddress;
+
+		return remoteComputerAddress;
     }
 
     /**
@@ -63,7 +66,8 @@ public class HttpRequestData extends java.lang.Object {
      *  @param  httpMethod HTTP method
      */
     public void setHttpMethod(String httpMethod) {
-        this.httpMethod = httpMethod;
+
+		this.httpMethod = httpMethod;
     }
 
     /**
@@ -71,13 +75,15 @@ public class HttpRequestData extends java.lang.Object {
      *@return httpMethod value
      */
     public String getHttpMethod() {
-        return httpMethod;
+
+		return httpMethod;
     }
 
     /**
 	 * Returns the value of requestURI.
 	 */
 	public String getRequestURI() {
+
 		return requestURI;
 	}
 
@@ -86,6 +92,7 @@ public class HttpRequestData extends java.lang.Object {
 	 * @param requestURI The value to assign requestURI.
 	 */
 	public void setRequestURI(String requestURI) {
+
 		this.requestURI = requestURI;
 	}
 
@@ -93,15 +100,16 @@ public class HttpRequestData extends java.lang.Object {
 	 * Returns the value of requestURL.
 	 */
 	public String getRequestURL() {
+
 		return requestURL;
 	}
-
 
 	/**
 	 * Sets the value of requestURL.
 	 * @param requestURL The value to assign requestURL.
 	 */
 	public void setRequestURL(String requestURL) {
+
 		this.requestURL = requestURL;
 	}
     
@@ -109,6 +117,7 @@ public class HttpRequestData extends java.lang.Object {
 	 * Returns the value of protocol.
 	 */
 	public String getProtocol() {
+
 		return protocol;
 	}
 
@@ -118,6 +127,7 @@ public class HttpRequestData extends java.lang.Object {
 	 * @param protocol The value to assign protocol.
 	 */
 	public void setProtocol(String protocol) {
+
 		this.protocol = protocol;
 	}
 
@@ -125,15 +135,16 @@ public class HttpRequestData extends java.lang.Object {
 	 * Returns the value of serverName.
 	 */
 	public String getServerName() {
+
 		return serverName;
 	}
-
 
 	/**
 	 * Sets the value of serverName.
 	 * @param serverName The value to assign serverName.
 	 */
 	public void setServerName(String serverName) {
+
 		this.serverName = serverName;
 	}
 
@@ -141,6 +152,7 @@ public class HttpRequestData extends java.lang.Object {
 	 * Returns the value of serverPort.
 	 */
 	public String getServerPort() {
+
 		return serverPort;
 	}
 
@@ -149,6 +161,7 @@ public class HttpRequestData extends java.lang.Object {
 	 * @param serverPort The value to assign serverPort.
 	 */
 	public void setServerPort(String serverPort) {
+
 		this.serverPort = serverPort;
 	}
 
@@ -156,22 +169,24 @@ public class HttpRequestData extends java.lang.Object {
 	 * Returns the value of currLocale.
 	 */
 	public String getCurrLocale() {
+
 		return currLocale;
 	}
-
 
 	/**
 	 * Sets the value of currLocale.
 	 * @param currLocale The value to assign currLocale.
 	 */
 	public void setCurrLocale(String currLocale) {
+
 		this.currLocale = currLocale;
 	}
 
-/**
+	/**
 	 * Returns the value of queryString.
 	 */
 	public String getQueryString() {
+
 		return queryString;
 	}
 
@@ -181,13 +196,15 @@ public class HttpRequestData extends java.lang.Object {
 	 * @param queryString The value to assign queryString.
 	 */
 	public void setQueryString(String queryString) {
+
 		this.queryString = queryString;
 	}
 
-/**
+	/**
 	 * Returns the value of queryParam.
 	 */
 	public String getQueryParam() {
+
 		return queryParam;
 	}
 
@@ -197,22 +214,24 @@ public class HttpRequestData extends java.lang.Object {
 	 * @param queryParam The value to assign queryParam.
 	 */
 	public void setQueryParam(String queryParam) {
+
 		this.queryParam = queryParam;
 	}
 
-/**
+	/**
 	 * Returns the value of userAgent.
 	 */
 	public String getUserAgent() {
+
 		return userAgent;
 	}
-
 
 	/**
 	 * Sets the value of userAgent.
 	 * @param userAgent The value to assign userAgent.
 	 */
 	public void setUserAgent(String userAgent) {
+
 		this.userAgent = userAgent;
 	}
 

@@ -132,6 +132,7 @@ public class KeywordAnalyzer implements Analyzer{
      *  Method that will evaluate number of members in the ArrayList in the Map for each keyword;
      *  Up to 10 members will be written per line into the output file;
      *  @param entry list of keywords and ArrayList of keyword locations in the input file;
+     *  @param printWriter PrintWriter object to help with print
      */
     public void writeOutputLines(Map.Entry<String, ArrayList<Integer>> entry, PrintWriter
                                  printWriter) {
@@ -149,7 +150,7 @@ public class KeywordAnalyzer implements Analyzer{
         locations = entry.getValue();
         numberOfLocations = locations.size();
         numberOfLines = numberOfLocations / 10;
-        numberOfLocationsLeft = numberOfLocations - numberOfLines * 10;
+        numberOfLocationsLeft = numberOfLocations - (numberOfLines * 10);
 
         //This will control printing a comma at the end of the line
         if (numberOfLocationsLeft > 0) {
@@ -185,9 +186,10 @@ public class KeywordAnalyzer implements Analyzer{
     /**
      *  Iterate over members of ArrayList of locations up to 10 times, and produce a line
      *  @param startIndex Starting index in the ArrayList
-     *  @param numIterations Number of times to iterate over ArrayList members
-     *  @param locationIn ArrayList of token locations
-     *  @param printComma a flag, which will control if a comma will be printed at the end of line
+     *  @param numOfIterations Number of times to iterate over ArrayList members
+     *  @param locations ArrayList of token locations
+     *  @param printWriter PrintWriter object to help printing report
+     *  @param printComma flag regulating printing of a comma
      *  @return next Index to be processed in the ArrayList of token locations
      */
     public int printALine(int startIndex, int numOfIterations, ArrayList<Integer> locations,

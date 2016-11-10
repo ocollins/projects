@@ -79,7 +79,8 @@ margin-top: 30px;
 }
 
 table.propertiesTable td {
-padding-bottom: 20px;
+padding-bottom: 10px;
+padding-left: 10px;
 vertical-align: top;
 }
 

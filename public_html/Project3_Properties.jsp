@@ -45,8 +45,28 @@
     <td>${myProject3Properties.getProperty("instructor.name")}</td></tr>
 
     <tr><td><strong>Project Description </strong></td>
-    <td>${myProject3Properties.getProperty("project.description")}</td></tr>
+    <td>${myProject3Properties.getProperty("project.description1")}</td></tr>
 
+    <tr><td></td>
+    <td>${myProject3Properties.getProperty("project.description2")}</td></tr>
+
+    <tr><td></td>
+    <td>${myProject3Properties.getProperty("project.description3")}</td></tr>
+
+    <tr><td></td>
+    <td>${myProject3Properties.getProperty("project.description4")}</td></tr>
+
+    <tr><td></td>
+    <td>${myProject3Properties.getProperty("project.description5")}</td></tr>
+
+    <tr><td></td>
+    <td>${myProject3Properties.getProperty("project.description6")}</td></tr>
+
+    <tr><td></td>
+    <td>${myProject3Properties.getProperty("project.description7")}</td></tr>
+
+    <tr><td></td>
+    <td>${myProject3Properties.getProperty("project.description8")}</td></tr>
 </table>
 
 <p><a href="/java112">HOME</a></p>

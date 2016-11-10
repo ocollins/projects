@@ -47,9 +47,11 @@ public class LexicalDensityTester{
         myTester.testWithString(testString4, 50);
     }    
 
-    /** Test lexical density analyzer. Compare returned value to the
-    *   expected value. If they do not match, display an error.
-    */
+     /** Test lexical density analyzer. Compare returned value to the
+     *   expected value. If they do not match, display an error.
+     *  @param testStringIn string that will be tested
+     *  @param expectedPercent lexical density percent
+     */
     public void testWithString(String testStringIn, int expectedPercent) {
         String[] tokenArray = null;
         int calculatedPercent = 0;

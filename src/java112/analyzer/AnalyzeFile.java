@@ -60,7 +60,7 @@ public class AnalyzeFile {
     /**
     *  Create Analyzer objects. 
     *  Create an instance of each analyzer and add it to ArrayList.
-    *  @param propertiesParm properties file object
+    *  @param propertiesIn properties file object
     */
     public void createAnalyzers(Properties propertiesIn) {
         analyzers = new ArrayList<Analyzer>();
