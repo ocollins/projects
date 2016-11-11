@@ -17,10 +17,10 @@
 </div>
 
 
-<h1 class="pageHeader">Tic Tac Paws</h1>
+<h1 class="pageHeader"><img src="images/header.PNG" alt="Tic Tac Paws"></h1>
 
 <form action="/java112/TicTacPawsServlet" method="GET">
-<div id="form_container">
+<p class="form_container">
 <INPUT TYPE="button" NAME="sqr1" class="tictac" value="     " onClick="value ='1'">
 <INPUT TYPE="button" NAME="sqr2" class="tictac" value="     " onClick="value ='1'">
 <INPUT TYPE="button" NAME="sqr3" class="tictac" value="     " onClick="value ='1'"><br />
@@ -30,8 +30,12 @@
 <INPUT TYPE="button" NAME="sqr7" class="tictac" value="     " onClick="value ='1'">
 <INPUT TYPE="button" NAME="sqr8" class="tictac" value="     " onClick="value ='1'">
 <INPUT TYPE="button" NAME="sqr9" class="tictac" value="     " onClick="value ='1'">
-</div>
+</p>
 </form>
+
+<p class="instruction"><img src="images/instructions.jpg" alt="Click a box to play"></p>
+ 
+<p class="catdogpic"><img src="images/catdog2.jpg"></p>
 
 <label class="feedback">${ticTac.message}</label>
 

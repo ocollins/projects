@@ -80,6 +80,7 @@ public class TokenSizeAnalyzer implements Analyzer{
     *  @return maximumSize
     */
     public int getMaximumSize() {
+
         return maximumSize;
     }
 

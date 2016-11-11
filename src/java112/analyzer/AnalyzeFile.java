@@ -77,7 +77,8 @@ public class AnalyzeFile {
         TokenCountAnalyzer tokenCountAnalyzer = new TokenCountAnalyzer(propertiesIn);
         analyzers.add(tokenCountAnalyzer);
 
-        LexicalDensityAnalyzer lexicalDensityAnalyzer = new LexicalDensityAnalyzer(propertiesIn);
+        LexicalDensityAnalyzer lexicalDensityAnalyzer = new LexicalDensityAnalyzer
+                      (propertiesIn);
         analyzers.add(lexicalDensityAnalyzer);
 
         TokenSizeAnalyzer tokenSizeAnalyzer = new TokenSizeAnalyzer(propertiesIn);

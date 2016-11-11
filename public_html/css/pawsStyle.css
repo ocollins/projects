@@ -1,28 +1,44 @@
-body {
-padding: 50px 100px;
-margin: 0;
+body { 
+padding: 50px 100px; 
+margin: 0; 
 font-family: Tahoma, Geneva, sans-serif;
-}
+background-color: rgb(151, 255, 186); 
+} 
 
-h1.pageHeader {
-font-size: 50px;
-font-family: "Comic Sans MS", cursive, sans-serif; 
-}
+h1.pageHeader { 
+margin-left: 350px;
+width: 40% 
+} 
 
-#form_container {
-margin: 0 auto;
-}
-input.tictac {
-background-color: pink;
-width: 150px;
-height: 150px;
-border-radius: 20px;
-   
-}
+p.form_container {
+margin-left: 550px;
+} 
+ 
 
-label.feedback {
-margin-top: 140px;
-color: red;
-font-size: 50px;
-}
+input.tictac { 
+background-color:rgb(151, 255, 186); 
+width: 120px; 
+height: 120px; 
+border-radius: 20px; 
+border-width: 10px;
+border-color: rgb(95, 66, 244);     
+} 
 
+p.catdogpic {
+float: right;
+margin-right: 400px;
+margin-bottom: 50px;
+}
+ 
+p.instruction {
+float: left;
+margin-left: 20px;
+}
+ 
+label.feedback { 
+margin-top: 140px; 
+color: red; 
+font-size: 50px; 
+} 
+ 
+ 
