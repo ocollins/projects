@@ -96,7 +96,7 @@ public class TokenSizeAnalyzer implements Analyzer{
         //Get name of the output directory
         String outputDirectory = properties.getProperty("output.dir");
         
-        //Build token length histogram
+        //Build token lengths histogram
         Map<Integer, String> histoMap = buildHistogram();
 
         //Write token sizes into a file    
