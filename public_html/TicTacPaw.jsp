@@ -50,6 +50,10 @@
 <p class="catdogpic"><img src="images/catdog2.jpg"></p>
 
 <label class="feedback">${myData.message}</label>
+<form action="/java112/TicTacPaw" name="reset" id="reset" method="GET">
+    <button type="submit" name="butreset" class="butreset" value="R">Start a New Game</button>
+</form>
+
 <script>
 function displayValue0() {
     document.getElementById("sq0").value = "X";

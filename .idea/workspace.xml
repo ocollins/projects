@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f05e4e5a-50f6-4aca-bd56-b71476292a11" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public_html/lab41.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java112/project3/TicTacPawAIR.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java112/project3/TicTacPawServletR.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java112/project4/Lab41Servlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/TicTacPaw.jsp" afterPath="$PROJECT_DIR$/public_html/TicTacPaw.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/css/pawsStyle.css" afterPath="$PROJECT_DIR$/public_html/css/pawsStyle.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/index.jsp" afterPath="$PROJECT_DIR$/public_html/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java112/analyzer/TokenSizeAnalyzer.java" afterPath="$PROJECT_DIR$/src/java112/analyzer/TokenSizeAnalyzer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java112/project3/TicTacPawAI.java" afterPath="$PROJECT_DIR$/src/java112/project3/TicTacPawAI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java112/project3/TicTacPawServlet.java" afterPath="$PROJECT_DIR$/src/java112/project3/TicTacPawServlet.java" />
     </list>
@@ -36,8 +30,8 @@
       <file leaf-file-name="TicTacPawServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java112/project3/TicTacPawServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="119" column="24" selection-start-line="119" selection-start-column="24" selection-end-line="119" selection-end-column="24" />
+            <state relative-caret-position="287">
+              <caret line="75" column="31" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -48,9 +42,11 @@
       <file leaf-file-name="TicTacPawAI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/java112/project3/TicTacPawAI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3080">
-              <caret line="140" column="21" selection-start-line="140" selection-start-column="21" selection-end-line="140" selection-end-column="21" />
-              <folding />
+            <state relative-caret-position="88">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -119,6 +115,7 @@
         <option value="$PROJECT_DIR$/src/java112/project3/TicTacPawServletR.java" />
         <option value="$PROJECT_DIR$/src/java112/project3/TicTacPawAIR.java" />
         <option value="$PROJECT_DIR$/src/java112/project3/TicTacPawServlet.java" />
+        <option value="$PROJECT_DIR$/src/java112/project3/TicTacPawAIOld.java" />
         <option value="$PROJECT_DIR$/src/java112/project3/TicTacPawAI.java" />
       </list>
     </option>
@@ -184,6 +181,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -242,24 +240,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="projects" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="projects" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public_html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -270,16 +253,16 @@
     <property name="settings.editor.splitter.proportion" value="0.21052632" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/java112/project3" />
-      <recent name="$PROJECT_DIR$/src/java112/labs3" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/java112/project3" />
       <recent name="$PROJECT_DIR$/src/java112/project4" />
       <recent name="$PROJECT_DIR$/src/java112/labs4" />
       <recent name="$PROJECT_DIR$/public_html" />
       <recent name="$PROJECT_DIR$/config" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/java112/project3" />
+      <recent name="$PROJECT_DIR$/src/java112/labs3" />
     </key>
   </component>
   <component name="RunManager">
@@ -731,11 +714,13 @@
       <workItem from="1478961656183" duration="11885000" />
       <workItem from="1478979320476" duration="5786000" />
       <workItem from="1478989501467" duration="6338000" />
+      <workItem from="1479044636250" duration="5006000" />
+      <workItem from="1479053918152" duration="4430000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124840000" />
+    <option name="totallyTimeSpent" value="134276000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="75" y="82" width="1839" height="998" extended-state="0" />
@@ -789,13 +774,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/java112/analyzer/TokenSizeAnalyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/analyzer.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1141,10 +1119,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/java112/project3/TicTacPawAIOld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/java112/project3/TicTacPawServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="119" column="24" selection-start-line="119" selection-start-column="24" selection-end-line="119" selection-end-column="24" />
+        <state relative-caret-position="287">
+          <caret line="75" column="31" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1153,9 +1139,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java112/project3/TicTacPawAI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3080">
-          <caret line="140" column="21" selection-start-line="140" selection-start-column="21" selection-end-line="140" selection-end-column="21" />
-          <folding />
+        <state relative-caret-position="88">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

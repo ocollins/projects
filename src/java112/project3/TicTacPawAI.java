@@ -1,12 +1,13 @@
 package java112.project3;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 /**
  * This is a java bean class holds multiple HttpRequestParameters
  * @author Eric Monforte
  */
-public class TicTacPawAI  {
+public class TicTacPawAI {
     TicTacPawData myData = null;
     private String[] square = null;
 
@@ -21,10 +22,13 @@ public class TicTacPawAI  {
     }
 
     public void process() {
-        if (!block()) {
+        if (myData.getMoves() == 9 ) {
+            myData.setMessage("IT IS A DRAW!!");
+        } else if (!block()) {
             move();
+            checkResults();
         }
-        checkResults();
+
     }
 
     private boolean block() {
@@ -168,6 +172,7 @@ public class TicTacPawAI  {
     }
 
     private void checkResults() {
+
         boolean square0X = square[0].equals("X");
         boolean square1X = square[1].equals("X");
         boolean square2X = square[2].equals("X");
@@ -187,6 +192,7 @@ public class TicTacPawAI  {
         boolean square6O = square[6].equals("O");
         boolean square7O = square[7].equals("O");
         boolean square8O = square[8].equals("O");
+        System.out.println("Inside AI check results " + Arrays.toString(square));
 
         if (square0O && square1O && square0O) {
             myData.setMessage("You lose!! Try again!!");
@@ -240,10 +246,12 @@ public class TicTacPawAI  {
 
         }
 
-        if (square0X && square1O && square0X) {
-            myData.setMessage("IT IS A DRAW!!");
+//        if (square0X && square1O && square2X) {
+//            myData.setMessage("IT IS A DRAW!!");
+//
+//        }
 
-        }
+
 
     }
 }

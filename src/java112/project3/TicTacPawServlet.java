@@ -39,6 +39,7 @@ public class TicTacPawServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException {
         response.setContentType("text/html");
+        TicTacPawData myData = null;
 
         System.out.println("In the servlet");
         HttpSession session = request.getSession(true);
@@ -47,36 +48,35 @@ public class TicTacPawServlet extends HttpServlet {
         //TicTacPawData myData = new TicTacPawData();
 
         //Gets the box id that the player selected
-        String testQuery = request.getQueryString();
         int selectedSquare = 0;
         String[] square = new String[9];
 
+        //If the reset button is pressed, kill the session
+        if (request.getParameter("butreset") != null) {
+            if (request.getParameter("butreset").equals("R")) {
+                System.out.println("Reset button pressed");
+                session.invalidate();
+                session = request.getSession(true);
+                myData = null;
+                
+            }
+        }
+
         //Get current bean values from the session object
-        TicTacPawData myData = (TicTacPawData) session.getAttribute("myData");
+        myData = (TicTacPawData) session.getAttribute("myData");
 
         if (myData == null) {
             //Initialize java bean
-            System.out.println("Player moves is null");
+            System.out.println("myData is null");
             //Create an instance of a bean with local variables
             myData = new TicTacPawData();
             createJavaBean(session, myData);
         } else {
-//            if (playerMove.length() > 0) {
-//                selectedSquare = 1;
-//                square[0] = " ";
-//            }
-            System.out.println("Moves is not null " + myData.getMoves());
-
             //Update player moves with the latest move
             updateArrayOfSquares(request, myData);
+            myData.setMoves(myData.getMoves()+1);
 
-            //Get current bean values from the session
-           // myData = (TicTacPawData) session.getAttribute("myData");
-            //Get values for each square in the array
-            //String[] square = myData.getSquare();
-            //square = myData.getSquare();
-
-            System.out.println("Message from the bean " + myData.getMessage());
+            System.out.println("myData is not null. Moves " + myData.getMoves());
             //Update the bean with computer's move
             TicTacPawAI anAI = new TicTacPawAI(myData);
             anAI.process();
