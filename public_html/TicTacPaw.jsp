@@ -10,13 +10,6 @@
 </head>
 
 <body>
-<div id="container">
-    <!-- header -->
-<div id="header">
-</div>
-</div>
-
-
 <h1 class="pageHeader"><img src="images/header.PNG" alt="Tic Tac Paws"></h1>
 
 <form action="/java112/TicTacPaw" name="tic" id="ticform" method="GET">
@@ -32,16 +25,24 @@
 </form>
 
 <p class="form_container">
-    <!--<input type="button" name="sqbutt" value="" id="sqbutt" onClick="displayValue()"/>-->
-    <button type="submit" name="but0" class="tictac" id="but0" value="X" onclick="displayValue0()">${myData.square[0]}</button>
-    <button type="submit" name="but1" class="tictac" id="but1" value="X" onclick="displayValue1()">${myData.square[1]}</button>
-    <button type="submit" name="but2" class="tictac" id="but2" value="X" onclick="displayValue2()">${myData.square[2]}</button><br>
-    <button type="submit" name="but3" class="tictac" id="but3" value="X" onclick="displayValue3()">${myData.square[3]}</button>
-    <button type="submit" name="but4" class="tictac" id="but4" value="X" onclick="displayValue4()">${myData.square[4]}</button>
-    <button type="submit" name="but5" class="tictac" id="but5" value="X" onclick="displayValue5()">${myData.square[5]}</button><br>
-    <button type="submit" name="but6" class="tictac" id="but6" value="X" onclick="displayValue6()">${myData.square[6]}</button>
-    <button type="submit" name="but7" class="tictac" id="but7" value="X" onclick="displayValue7()">${myData.square[7]}</button>
-    <button type="submit" name="but8" class="tictac" id="but8" value="X" onclick="displayValue8()">${myData.square[8]}</button>
+    <button type="submit" name="but0" class="tictac" id="but0" value="X" 
+        onclick="displayValue0()">${myData.square[0]}</button>
+    <button type="submit" name="but1" class="tictac" id="but1" value="X" 
+        onclick="displayValue1()">${myData.square[1]}</button>
+    <button type="submit" name="but2" class="tictac" id="but2" value="X" 
+        onclick="displayValue2()">${myData.square[2]}</button><br>
+    <button type="submit" name="but3" class="tictac" id="but3" value="X" 
+        onclick="displayValue3()">${myData.square[3]}</button>
+    <button type="submit" name="but4" class="tictac" id="but4" value="X" 
+        onclick="displayValue4()">${myData.square[4]}</button>
+    <button type="submit" name="but5" class="tictac" id="but5" value="X" 
+        onclick="displayValue5()">${myData.square[5]}</button><br>
+    <button type="submit" name="but6" class="tictac" id="but6" value="X" 
+        onclick="displayValue6()">${myData.square[6]}</button>
+    <button type="submit" name="but7" class="tictac" id="but7" value="X" 
+        onclick="displayValue7()">${myData.square[7]}</button>
+    <button type="submit" name="but8" class="tictac" id="but8" value="X" 
+        onclick="displayValue8()">${myData.square[8]}</button>
 </p>
 
 
@@ -50,6 +51,7 @@
 <p class="catdogpic"><img src="images/catdog2.jpg"></p>
 
 <label class="feedback">${myData.message}</label>
+
 <form action="/java112/TicTacPaw" name="reset" id="reset" method="GET">
     <button type="submit" name="butreset" class="butreset" value="R">Start a New Game</button>
 </form>
@@ -93,10 +95,5 @@ function displayValue8() {
 }
 </script>
 
-<!-- footer -->
-<div id="footer">
-
-<!-- end footer -->
-</div>
 </body>
 </html>

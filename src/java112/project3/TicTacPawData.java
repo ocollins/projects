@@ -11,6 +11,22 @@ public class TicTacPawData implements Serializable {
     private String[] square;
     private String message;
     private int moves;
+    private boolean endOfGame;
+	/**
+	 * Returns the value of endOfGame.
+	 */
+	public boolean isEndOfGame() {
+		return endOfGame;
+	}
+
+
+	/**
+	 * Sets the value of endOfGame.
+	 * @param endOfGame The value to assign endOfGame.
+	 */
+	public void setEndOfGame(boolean endOfGame) {
+		this.endOfGame = endOfGame;
+	}
 
     /**
      * This is a constructor

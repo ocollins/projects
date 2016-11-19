@@ -23,11 +23,6 @@ import java.util.Arrays;
 
 public class TicTacPawServlet extends HttpServlet {
 
-    public void init() throws ServletException {
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-        System.out.println("!!!!!!Starting new session!!!!!!!!!");
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-    }
 
     /**
      *  Handles HTTP GET requests.
@@ -43,9 +38,6 @@ public class TicTacPawServlet extends HttpServlet {
 
         System.out.println("In the servlet");
         HttpSession session = request.getSession(true);
-
-        //Create an instance of a bean with local variables
-        //TicTacPawData myData = new TicTacPawData();
 
         //Gets the box id that the player selected
         int selectedSquare = 0;
@@ -67,7 +59,6 @@ public class TicTacPawServlet extends HttpServlet {
 
         if (myData == null) {
             //Initialize java bean
-            System.out.println("myData is null");
             //Create an instance of a bean with local variables
             myData = new TicTacPawData();
             createJavaBean(session, myData);
@@ -76,18 +67,27 @@ public class TicTacPawServlet extends HttpServlet {
             updateArrayOfSquares(request, myData);
             myData.setMoves(myData.getMoves()+1);
 
-            System.out.println("myData is not null. Moves " + myData.getMoves());
             //Update the bean with computer's move
             TicTacPawAI anAI = new TicTacPawAI(myData);
             anAI.process();
-            System.out.println("square array out of AI " + Arrays.toString(myData.getSquare()));
-            //myData.setSquare(square);
-//            if (square[Integer.parseInt(playerMove)].equals(" ")) {
-//
-//                square[Integer.parseInt(playerMove)] = "1";
-//                myData.setMoves(myData.getMoves()+1);
+            boolean endOfGame = myData.isEndOfGame();
 
-//
+            if (anAI.getWinner() == 1) {
+                myData.setMessage("You Win!!! Click the New Game button to play again.");
+                myData.setEndOfGame(true);
+            } else if (anAI.getWinner() == 2) {
+                myData.setMessage("OOOPS!! You Loose!!! SORRY!");
+                myData.setEndOfGame(true);
+            } else if (myData.getMoves() == 9) {
+                myData.setMessage("It is a DRAW!");
+                myData.setEndOfGame(true);
+            }
+
+            if (endOfGame) {
+                session.invalidate();
+                session = request.getSession(true);
+                myData = null;
+            }
 
             //}
         }
@@ -158,7 +158,6 @@ public class TicTacPawServlet extends HttpServlet {
         String[] square = new String[9];
         //Get current array of moves from the bean
         square = myData.getSquare();
-        System.out.println("Square array before " + Arrays.toString(square));
         if (request.getParameter("sq0") != null) {
             if (request.getParameter("sq0").equals("X")) {
                 square[0] = "X";

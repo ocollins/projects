@@ -21,17 +21,25 @@
 
 <form action="/java112/TicTacPaw" name="tic" id="ticform" method="GET">
     <p class="form_container">
-<input type="button" name="sq0" value="" id="sq0" onClick="displayValue()"/>
-        <button type="submit" name="sq00" class="tictac" id="sq00" value="X" onclick="displayValue()">${myData.square[0]}</button>
-        <button type="submit" name="sq1" class="tictac" value="X"></button>
-        <button type="submit" name="sq2" class="tictac" value="X"></button><br>
-        <button type="submit" name="sq3" class="tictac" value="X"></button>
-        <button type="submit" name="sq4" class="tictac" value="X"></button>
-        <button type="submit" name="sq5" class="tictac" value="X"></button><br>
-        <button type="submit" name="sq6" class="tictac" value="X"></button>
-        <button type="submit" name="sq7" class="tictac" value="X"></button>
-        <button type="submit" name="sq8" class="tictac" value="X"></button>
-</p>
+        <button type="submit" name="sq0" class="tictac" value=" " 
+                onclick="displayValue0()">${myData.square[0]}</button>
+        <button type="submit" name="sq1" class="tictac" value=" " 
+                onclick="displayValue1()">${myData.square[1]}</button>
+        <button type="submit" name="sq2" class="tictac" value=" " 
+                onclick="displayValue2()">${myData.square[2]}</button><br>
+        <button type="submit" name="sq3" class="tictac" value=" " 
+                onclick="displayValue3()">${myData.square[3]}</button>
+        <button type="submit" name="sq4" class="tictac" value=" " 
+                onclick="displayValue4()">${myData.square[4]}</button>
+        <button type="submit" name="sq5" class="tictac" value=" " 
+                onclick="displayValue5()">${myData.square[5]}</button><br>
+        <button type="submit" name="sq6" class="tictac" value=" " 
+                onclick="displayValue6()">${myData.square[6]}</button>
+        <button type="submit" name="sq7" class="tictac" value=" " 
+                onclick="displayValue7()">${myData.square[7]}</button>
+        <button type="submit" name="sq8" class="tictac" value=" " 
+                onclick="displayValue8()">${myData.square[8]}</button>
+  </p>
 </form>
 
 <p class="instruction"><img src="images/instructions.jpg" alt="Click a box to play"></p>
@@ -39,11 +47,34 @@
 <p class="catdogpic"><img src="images/catdog2.jpg"></p>
 
 <label class="feedback">${myData.message}</label>
+
 <script>
-function displayValue() {
+function displayValue0() {
     document.getElementById("sq0").value = "X";
-    document.getElementById("ticform").submit();
-    document.getElementById("sq0").value = ${myData.square[0]};
+}
+function displayValue1() {
+    document.getElementById("sq1").value = "X";
+}
+function displayValue2() {
+    document.getElementById("sq2").value = "X";
+}
+function displayValue3() {
+    document.getElementById("sq3").value = "X";
+}
+function displayValue4() {
+    document.getElementById("sq4").value = "X";
+}
+function displayValue5() {
+    document.getElementById("sq5").value = "X";
+}
+function displayValue6() {
+    document.getElementById("sq6").value = "X";
+}
+function displayValue7() {
+    document.getElementById("sq7").value = "X";
+}
+function displayValue8() {
+    document.getElementById("sq8").value = "X";
 }
 </script>
 

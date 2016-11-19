@@ -1,257 +1,356 @@
 package java112.project3;
-
+ 
 import java.io.Serializable;
-import java.util.Arrays;
-
+ 
 /**
  * This is a java bean class holds multiple HttpRequestParameters
  * @author Eric Monforte
  */
-public class TicTacPawAI {
+public class TicTacPawAI  {
     TicTacPawData myData = null;
-    private String[] square = null;
-
+    int winner = 0;
+ 
     public TicTacPawAI() {
     }
-
+ 
     public TicTacPawAI(TicTacPawData aParameter) {
         this();
-        //get current values from the bean
         myData = aParameter;
-        square = myData.getSquare();
+        convertToNumber(myData.getSquare());
+ 
     }
-
+ 
     public void process() {
-        if (myData.getMoves() == 9 ) {
-            myData.setMessage("IT IS A DRAW!!");
-        } else if (!block()) {
+ 
+        if (checkWin("1")) {
+            winner = 1;
+        } else if (moveToWin()) {
+            if (checkWin("0")) {
+                winner = 2;
+            }
+        } else if (block()) {
+            if (checkWin("0")) {
+                winner = 2;
+            }
+        } else {
             move();
-            checkResults();
         }
-
+ 
+        convertToXO(myData.getSquare());
     }
-
+ 
+    private boolean checkWin(String player) {
+        String[] square = myData.getSquare();
+ 
+        boolean square0 = square[0].equals(player);
+        boolean square1 = square[1].equals(player);
+        boolean square2 = square[2].equals(player);
+        boolean square3 = square[3].equals(player);
+        boolean square4 = square[4].equals(player);
+        boolean square5 = square[5].equals(player);
+        boolean square6 = square[6].equals(player);
+        boolean square7 = square[7].equals(player);
+        boolean square8 = square[8].equals(player);
+ 
+        if (square0 && square1 && square2) {
+            return true;
+        } else if (square3 && square4 && square5) {
+            return true;
+        } else if (square6 && square7 && square8) {
+            return true;
+        } else if (square0 && square3 && square6) {
+            return true;
+        } else if (square1 && square4 && square7) {
+            return true;
+        } else if (square2 && square5 && square8) {
+            return true;
+        } else if (square0 && square4 && square8) {
+            return true;
+        } else if (square2 && square4 && square6) {
+            return true;
+        }
+ 
+        return false;
+ 
+    }
+ 
     private boolean block() {
-        //String[] square = myData.getSquare();
-
-        boolean square0 = square[0].equals("X");
-        boolean square1 = square[1].equals("X");
-        boolean square2 = square[2].equals("X");
-        boolean square3 = square[3].equals("X");
-        boolean square4 = square[4].equals("X");
-        boolean square5 = square[5].equals("X");
-        boolean square6 = square[6].equals("X");
-        boolean square7 = square[7].equals("X");
-        boolean square8 = square[8].equals("X");
-
+        String[] square = myData.getSquare();
+ 
+        boolean square0 = square[0].equals("1");
+        boolean square1 = square[1].equals("1");
+        boolean square2 = square[2].equals("1");
+        boolean square3 = square[3].equals("1");
+        boolean square4 = square[4].equals("1");
+        boolean square5 = square[5].equals("1");
+        boolean square6 = square[6].equals("1");
+        boolean square7 = square[7].equals("1");
+        boolean square8 = square[8].equals("1");
+ 
         if (square0 && square1 && square[2].equals(" ")) {
-            square[2] = "O";
+            square[2] = "0";
             myData.setMoves(myData.getMoves() + 1);
             return true;
         } else if (square3 && square4 && square[5].equals(" ")) {
-            square[5] = "O";
+            square[5] = "0";
             myData.setMoves(myData.getMoves() + 1);
             return true;
         } else if (square6 && square7 && square[8].equals(" ")) {
-            square[8] = "O";
+            square[8] = "0";
             myData.setMoves(myData.getMoves() + 1);
             return true;
         } else if (square1 && square2 && square[0].equals(" ")) {
-            square[0] = "O";
+            square[0] = "0";
             myData.setMoves(myData.getMoves() + 1);
             return true;
         } else if (square4 && square5 && square[3].equals(" ")) {
-            square[3] = "O";
+            square[3] = "0";
             myData.setMoves(myData.getMoves() + 1);
             return true;
         } else if (square7 && square8 && square[6].equals(" ")) {
-            square[6] = "O";
+            square[6] = "0";
             myData.setMoves(myData.getMoves() + 1);
             return true;
         } else if (square0 && square2 && square[1].equals(" ")) {
-            square[1] = "O";
+            square[1] = "0";
             myData.setMoves(myData.getMoves() + 1);
             return true;
         } else if (square3 && square5 && square[4].equals(" ")) {
-            square[4] = "O";
+            square[4] = "0";
             myData.setMoves(myData.getMoves() + 1);
             return true;
         } else if (square6 && square8 && square[7].equals(" ")) {
-            square[7] = "O";
+            square[7] = "0";
             myData.setMoves(myData.getMoves() + 1);
             return true;
         } else if (square0 && square3 && square[6].equals(" ")) {
-            square[6] = "O";
+            square[6] = "0";
             myData.setMoves(myData.getMoves() + 1);
             return true;
         } else if (square1 && square4 && square[7].equals(" ")) {
-            square[7] = "O";
+            square[7] = "0";
             myData.setMoves(myData.getMoves() + 1);
             return true;
         } else if (square2 && square5 && square[8].equals(" ")) {
-            square[8] = "O";
+            square[8] = "0";
             myData.setMoves(myData.getMoves() + 1);
             return true;
         } else if (square0 && square[3].equals(" ") && square6) {
-            square[3] = "O";
+            square[3] = "0";
             myData.setMoves(myData.getMoves() + 1);
             return true;
         } else if (square1 && square[4].equals(" ") && square7) {
-            square[4] = "O";
+            square[4] = "0";
             myData.setMoves(myData.getMoves() + 1);
             return true;
         } else if (square2 && square[5].equals(" ") && square8) {
-            square[5] = "O";
+            square[5] = "0";
             myData.setMoves(myData.getMoves() + 1);
             return true;
         } else if (square[0].equals(" ") && square3 && square6) {
-            square[0] = "O";
+            square[0] = "0";
             myData.setMoves(myData.getMoves() + 1);
             return true;
         } else if (square[1].equals(" ") && square4 && square7) {
-            square[1] = "O";
+            square[1] = "0";
             myData.setMoves(myData.getMoves() + 1);
             return true;
         } else if (square[2].equals(" ") && square5 && square8) {
-            square[2] = "O";
+            square[2] = "0";
             myData.setMoves(myData.getMoves() + 1);
             return true;
         } else if (square[0].equals(" ") && square4 && square8) {
-            square[0] = "O";
+            square[0] = "0";
             myData.setMoves(myData.getMoves() + 1);
             return true;
         } else if (square[2].equals(" ") && square4 && square6) {
-            square[2] = "O";
+            square[2] = "0";
             myData.setMoves(myData.getMoves() + 1);
             return true;
         } else if (square0 && square[4].equals(" ") && square8) {
-            square[4] = "O";
+            square[4] = "0";
             myData.setMoves(myData.getMoves() + 1);
             return true;
         } else if (square2 && square[4].equals(" ") && square6) {
-            square[4] = "O";
+            square[4] = "0";
             myData.setMoves(myData.getMoves() + 1);
             return true;
         } else if (square0 && square4 && square[8].equals(" ")) {
-            square[8] = "O";
+            square[8] = "0";
             myData.setMoves(myData.getMoves() + 1);
             return true;
         } else if (square2 && square4 && square[6].equals(" ")) {
-            square[6] = "O";
+            square[6] = "0";
             myData.setMoves(myData.getMoves() + 1);
             return true;
         }
-
+ 
         return false;
-
     }
-
+ 
+    private boolean moveToWin() {
+        String[] square = myData.getSquare();
+ 
+        boolean square0 = square[0].equals("0");
+        boolean square1 = square[1].equals("0");
+        boolean square2 = square[2].equals("0");
+        boolean square3 = square[3].equals("0");
+        boolean square4 = square[4].equals("0");
+        boolean square5 = square[5].equals("0");
+        boolean square6 = square[6].equals("0");
+        boolean square7 = square[7].equals("0");
+        boolean square8 = square[8].equals("0");
+ 
+        if (square0 && square1 && square[2].equals(" ")) {
+            square[2] = "0";
+            myData.setMoves(myData.getMoves() + 1);
+            return true;
+        } else if (square3 && square4 && square[5].equals(" ")) {
+            square[5] = "0";
+            myData.setMoves(myData.getMoves() + 1);
+            return true;
+        } else if (square6 && square7 && square[8].equals(" ")) {
+            square[8] = "0";
+            myData.setMoves(myData.getMoves() + 1);
+            return true;
+        } else if (square1 && square2 && square[0].equals(" ")) {
+            square[0] = "0";
+            myData.setMoves(myData.getMoves() + 1);
+            return true;
+        } else if (square4 && square5 && square[3].equals(" ")) {
+            square[3] = "0";
+            myData.setMoves(myData.getMoves() + 1);
+            return true;
+        } else if (square7 && square8 && square[6].equals(" ")) {
+            square[6] = "0";
+            myData.setMoves(myData.getMoves() + 1);
+            return true;
+        } else if (square0 && square2 && square[1].equals(" ")) {
+            square[1] = "0";
+            myData.setMoves(myData.getMoves() + 1);
+            return true;
+        } else if (square3 && square5 && square[4].equals(" ")) {
+            square[4] = "0";
+            myData.setMoves(myData.getMoves() + 1);
+            return true;
+        } else if (square6 && square8 && square[7].equals(" ")) {
+            square[7] = "0";
+            myData.setMoves(myData.getMoves() + 1);
+            return true;
+        } else if (square0 && square3 && square[6].equals(" ")) {
+            square[6] = "0";
+            myData.setMoves(myData.getMoves() + 1);
+            return true;
+        } else if (square1 && square4 && square[7].equals(" ")) {
+            square[7] = "0";
+            myData.setMoves(myData.getMoves() + 1);
+            return true;
+        } else if (square2 && square5 && square[8].equals(" ")) {
+            square[8] = "0";
+            myData.setMoves(myData.getMoves() + 1);
+            return true;
+        } else if (square0 && square[3].equals(" ") && square6) {
+            square[3] = "0";
+            myData.setMoves(myData.getMoves() + 1);
+            return true;
+        } else if (square1 && square[4].equals(" ") && square7) {
+            square[4] = "0";
+            myData.setMoves(myData.getMoves() + 1);
+            return true;
+        } else if (square2 && square[5].equals(" ") && square8) {
+            square[5] = "0";
+            myData.setMoves(myData.getMoves() + 1);
+            return true;
+        } else if (square[0].equals(" ") && square3 && square6) {
+            square[0] = "0";
+            myData.setMoves(myData.getMoves() + 1);
+            return true;
+        } else if (square[1].equals(" ") && square4 && square7) {
+            square[1] = "0";
+            myData.setMoves(myData.getMoves() + 1);
+            return true;
+        } else if (square[2].equals(" ") && square5 && square8) {
+            square[2] = "0";
+            myData.setMoves(myData.getMoves() + 1);
+            return true;
+        } else if (square[0].equals(" ") && square4 && square8) {
+            square[0] = "0";
+            myData.setMoves(myData.getMoves() + 1);
+            return true;
+        } else if (square[2].equals(" ") && square4 && square6) {
+            square[2] = "0";
+            myData.setMoves(myData.getMoves() + 1);
+            return true;
+        } else if (square0 && square[4].equals(" ") && square8) {
+            square[4] = "0";
+            myData.setMoves(myData.getMoves() + 1);
+            return true;
+        } else if (square2 && square[4].equals(" ") && square6) {
+            square[4] = "0";
+            myData.setMoves(myData.getMoves() + 1);
+            return true;
+        } else if (square0 && square4 && square[8].equals(" ")) {
+            square[8] = "0";
+            myData.setMoves(myData.getMoves() + 1);
+            return true;
+        } else if (square2 && square4 && square[6].equals(" ")) {
+            square[6] = "0";
+            myData.setMoves(myData.getMoves() + 1);
+            return true;
+        }
+ 
+        return false;
+ 
+    }
+ 
     private void move() {
-        //String[] square = myData.getSquare();
+        String[] square = myData.getSquare();
         myData.setMoves(myData.getMoves()+1);
-
-        if (square[0].equals(" ")) {
-            square[0] = "O";
-        } else if (square[1].equals(" ")) {
-            square[1] = "O";
-        } else if (square[2].equals(" ")) {
-            square[2] = "O";
-        } else if (square[3].equals(" ")) {
-            square[3] = "O";
-        } else if (square[4].equals(" ")) {
-            square[4] = "O";
-        } else if (square[5].equals(" ")) {
-            square[5] = "O";
-        } else if (square[6].equals(" ")) {
-            square[6] = "O";
-        } else if (square[7].equals(" ")) {
-            square[7] = "O";
+ 
+        if (square[4].equals(" ")) {
+            square[4] = "0";
+        } else if (square[0].equals(" ")) {
+            square[0] = "0";
         } else if (square[8].equals(" ")) {
-            square[8] = "O";
+            square[8] = "0";
+        } else if (square[5].equals(" ")) {
+            square[5] = "0";
+        } else if (square[1].equals(" ")) {
+            square[1] = "0";
+        } else if (square[7].equals(" ")) {
+            square[7] = "0";
+        } else if (square[2].equals(" ")) {
+            square[2] = "0";
+        } else if (square[6].equals(" ")) {
+            square[6] = "0";
+        } else if (square[3].equals(" ")) {
+            square[3] = "0";
+        } else {
+            myData.setMoves(myData.getMoves()-1);
         }
     }
-
-    private void checkResults() {
-
-        boolean square0X = square[0].equals("X");
-        boolean square1X = square[1].equals("X");
-        boolean square2X = square[2].equals("X");
-        boolean square3X = square[3].equals("X");
-        boolean square4X = square[4].equals("X");
-        boolean square5X = square[5].equals("X");
-        boolean square6X = square[6].equals("X");
-        boolean square7X = square[7].equals("X");
-        boolean square8X = square[8].equals("X");
-
-        boolean square0O = square[0].equals("O");
-        boolean square1O = square[1].equals("O");
-        boolean square2O = square[2].equals("O");
-        boolean square3O = square[3].equals("O");
-        boolean square4O = square[4].equals("O");
-        boolean square5O = square[5].equals("O");
-        boolean square6O = square[6].equals("O");
-        boolean square7O = square[7].equals("O");
-        boolean square8O = square[8].equals("O");
-        System.out.println("Inside AI check results " + Arrays.toString(square));
-
-        if (square0O && square1O && square0O) {
-            myData.setMessage("You lose!! Try again!!");
-
-        } else if (square3O && square4O && square5O) {
-            myData.setMessage("You lose!! Try again!!");
-
-        } else if (square6O && square7O && square8O) {
-            myData.setMessage("You lose!! Try again!!");
-
-        } else if (square0O && square4O && square8O) {
-            myData.setMessage("You lose!! Try again!!");
-
-        } else if (square2O && square4O && square6O) {
-            myData.setMessage("You lose!! Try again!!");
-
-        } else if (square0O && square3O && square6O) {
-            myData.setMessage("You lose!! Try again!!");
-
-        } else if (square1O && square4O && square7O) {
-            myData.setMessage("You lose!! Try again!!");
-
-        } else if (square2O && square5O && square8O) {
-            myData.setMessage("You lose!! Try again!!");
-
+ 
+    public int getWinner() {
+        return winner;
+    }
+ 
+    private void convertToNumber(String[] square) {
+        for (int loop = 0; loop < square.length; loop++) {
+            if (square[loop].equals("X")) {
+                square[loop] = "1";
+            } else if (square[loop].equals("O")){
+                square[loop] = "0";
+            }
         }
-
-        if (square0X && square1X && square0X) {
-            myData.setMessage("WHOO HOO!! YOU WON!!");
-
-        } else if (square3X && square4X && square5X) {
-            myData.setMessage("WHOO HOO!! YOU WON!!");
-
-        } else if (square6X && square7X && square8X) {
-            myData.setMessage("WHOO HOO!! YOU WON!!");
-
-        } else if (square0X && square4X && square8X) {
-            myData.setMessage("WHOO HOO!! YOU WON!!");
-
-        } else if (square2X && square4X && square6X) {
-            myData.setMessage("WHOO HOO!! YOU WON!!");
-
-        } else if (square0X && square3X && square6X) {
-            myData.setMessage("WHOO HOO!! YOU WON!!");
-
-        } else if (square1X && square4X && square7X) {
-            myData.setMessage("WHOO HOO!! YOU WON!!");
-
-        } else if (square2X && square5X && square8X) {
-            myData.setMessage("WHOO HOO!! YOU WON!!");
-
+    }
+ 
+    private void convertToXO(String[] square) {
+        for (int loop = 0; loop < square.length; loop++) {
+            if (square[loop].equals("1")) {
+                square[loop] = "X";
+            } else if (square[loop].equals("0")){
+                square[loop] = "O";
+            }
         }
-
-//        if (square0X && square1O && square2X) {
-//            myData.setMessage("IT IS A DRAW!!");
-//
-//        }
-
-
-
     }
 }
