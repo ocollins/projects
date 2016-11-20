@@ -8,6 +8,21 @@ import java.sql.*;
  * Lab JDBC part 2
  */
 public class JDBCInsertEmployee {
+    /**
+     *  The main program for the JDBCSelectWhereExample class
+     *
+     *@param  args  The command line arguments
+     *
+     *@since
+     *
+     */
+    public static void main(String[] args) {
+
+        JDBCInsertEmployee employees = new JDBCInsertEmployee();
+
+        employees.runSample();
+
+    }
 
     public void runSample() {
 
@@ -29,41 +44,62 @@ public class JDBCInsertEmployee {
 //                    phone           varchar(10),
 
             statement = connection.createStatement();
-            int id = 99999;
+            int id = 151;
             String fName = "Donald";
             String lName = "Trump";
+            String ssn = "884-90-8888";
+            String dept = "Management";
+            String room  = "000";
+            String phone = "000-000-00-0000";
+
+            //Count rows before the insert
+            String countRows = "SELECT COUNT(*) FROM employees";
+            resultSet = statement.executeQuery(countRows);
+
+            //Display number of table rows before the insert
+            int rowCount = resultSet.getInt(1);
+            System.out.println("Rows before the insert " + rowCount);
+
+            String insertStatement =
+                    "INSERT INTO employees (emp_id,first_name,last_name,ssn,dept,room,phone) " +
+                    "VALUES ("
+                    + id + ","
+                    + fName + ","
+                    + lName + ","
+                    + ssn + ","
+                    + dept + ","
+                    + room + ","
+                    + phone + ")";
+
+            statement.executeUpdate(insertStatement);
 
 
-            String queryString = "SELECT *"
+
+            String queryStringSelect = "SELECT *"
                     + " FROM employees " + "WHERE last_name like '"
                     + "Smith" + "%'";
 
-            System.out.println("queryString: " + queryString);
+            //System.out.println("queryString: " + queryString);
 
-            resultSet = statement.executeQuery(queryString);
-
-            System.out.println();
-
-            while (resultSet.next()) {
-                String employeeId = resultSet.getString("emp_id");
-                String firstName = resultSet.getString("first_name");
-                String lastName = resultSet.getString("last_name");
-                String ssn = resultSet.getString("ssn");
-                String department = resultSet.getString("dept");
-                String room = resultSet.getString("room");
-                String phone = resultSet.getString("phone");
-                System.out.println(" Id: " + employeeId + " "
-                        + firstName + " " + lastName + " " + ssn + " "
-                        + department + " " + room + " " + phone);
-            }
+            //resultSet = statement.executeQuery(queryString);
 
             System.out.println();
 
-            ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
-            int columns = resultSetMetaData.getColumnCount();
-            System.out.println(" Column count before : " + columns);
+//            while (resultSet.next()) {
+//                String employeeId = resultSet.getString("emp_id");
+//                String firstName = resultSet.getString("first_name");
+//                String lastName = resultSet.getString("last_name");
+//                String ssn = resultSet.getString("ssn");
+//                String department = resultSet.getString("dept");
+//                String room = resultSet.getString("room");
+//                String phone = resultSet.getString("phone");
+//                System.out.println(" Id: " + employeeId + " "
+//                        + firstName + " " + lastName + " " + ssn + " "
+//                        + department + " " + room + " " + phone);
+//            }
+//
+//            System.out.println();
 
-            System.out.println();
 
         } catch (ClassNotFoundException classNotFound) {
             System.err.println("Cannot find database driver ");
@@ -100,20 +136,6 @@ public class JDBCInsertEmployee {
 
     }
 
-    /**
-     *  The main program for the JDBCSelectWhereExample class
-     *
-     *@param  args  The command line arguments
-     *
-     *@since
-     *
-     */
-    public static void main(String[] args) {
 
-        JDBCSelectEmployees employees = new JDBCSelectEmployees();
-
-        employees.runSample();
-
-    }
 
 }

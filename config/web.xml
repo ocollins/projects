@@ -38,6 +38,17 @@
   <jsp-file>/Lab23JSP.jsp</jsp-file>
 </servlet>
 
+<!--
+<servlet>
+  <servlet-name>Lab41JSP</servlet-name>
+  <jsp-file>/lab41.jsp</jsp-file>
+</servlet>
+
+<servlet>
+  <servlet-name>Lab41Servlet</servlet-name>
+  <servlet-class>java112.labs4.Lab41Servlet</servlet-class>
+</servlet>
+-->
 <!-- ********************************************************************* -->
 <!-- Servlet Mappings **************************************************** -->
 <!-- ********************************************************************* -->
@@ -46,6 +57,17 @@
   <url-pattern>/Lab23JSP</url-pattern>
 </servlet-mapping>
 
+<!--
+<servlet-mapping>
+  <servlet-name>Lab41JSP</servlet-name>
+  <url-pattern>/lab41</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+  <servlet-name>Lab41Servlet</servlet-name>
+  <url-pattern>/lab41S</url-pattern>
+</servlet-mapping>
+-->
 <!-- ********************************************************************* -->
 <!-- Home Page *********************************************************** -->
 <!-- ********************************************************************* -->

@@ -12,7 +12,7 @@
 <body>
 <h1 class="pageHeader"><img src="images/header.PNG" alt="Tic Tac Paws"></h1>
 
-<form action="/java112/TicTacPaw" name="tic" id="ticform" method="GET">
+<form action="/java112/labs4/TicTacPaw" name="tic" id="ticform" method="GET">
     <input type="hidden" name="sq0" id="sq0" value = "">
     <input type="hidden" name="sq1" id="sq1" value = "">
     <input type="hidden" name="sq2" id="sq2" value = "">

@@ -18,7 +18,7 @@ import javax.servlet.annotation.*;
 */
 @WebServlet(
     name = "Lab41Servlet",
-    urlPatterns = { "/labfourone" }
+    urlPatterns = { "/lab41S" }
 )
 public class Lab41Servlet extends HttpServlet {
     /**
@@ -40,14 +40,9 @@ public class Lab41Servlet extends HttpServlet {
         out.print("<HEAD><TITLE>Lab Four One Servlet</TITLE></HEAD>");
         out.print("<BODY bgcolor = \"#64d9c2\">");
         out.print("<h1 align = \"center\">Lab Four One Servlet</h1>");
-        out.print("<p align = \"center\"> Owners name " + request.getParameter("ownername") + "</p>");
-
-//        out.println("<table border = 1>");
-//        out.print("<tr><td> HIT COUNTER " + hitCounter + "</td></tr>");
-//        out.print("<tr><td>First hit " + servletLoadTime + "</td></tr>");
-//        out.print("<tr><td>Current date " + getTime() + "</td></tr>");
-//        out.print("</table>");
-        
+        out.print("<p align = \"center\"> Owner name: " + request.getParameter("ownername") + "</p>");
+        out.print("<p align = \"center\"> Pet name: " + request.getParameter("petname") + "</p>");
+        out.print("<p align = \"center\"> Pet Species: " + request.getParameter("species") + "</p>");
         out.print("</BODY>");
         out.print("</HTML>");
         out.close();
