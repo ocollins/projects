@@ -1,0 +1,29 @@
+body { 
+margin: 0; 
+font-family: Tahoma, Geneva, sans-serif;
+background-image: url(../images/employee_bg.jpg);
+background-repeat: no-repeat;
+background-size: 100%;
+
+} 
+
+h1 {
+padding: 50px;
+font-size:  60px;
+}
+
+#container {
+text-align: center;
+}
+
+table.searchtable {
+margin: 0 auto;
+/*border: 1px solid black;*/
+}
+
+td {
+padding: 6px;
+/*border: 1px solid black;*/
+text-align: left;
+}
+

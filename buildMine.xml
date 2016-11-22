@@ -55,6 +55,7 @@
                      *.xml,
                      java112/labs1/**,
                      java112/labs2/**,
+                     java112/labs4/**,
                      java112/project2/**,
                      java112/project3/**,
                      java112/project4/**,
@@ -75,8 +76,10 @@
           java112/labs1/**, 
           java112/labs2/**,
           java112/labs3/**,
+          java112/labs4/**,
           java112/project2/**, 
           java112/project3/**,
+          java112/project4/**,  
           java112/tests/**,
           java112/demo/**,
           java112/employee/**
