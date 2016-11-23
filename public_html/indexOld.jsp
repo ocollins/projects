@@ -1,9 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!--
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
-<c:import url="jsp/Head.jsp"/>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
 
 <body>
 <div id="container">
@@ -16,7 +20,14 @@
 
 </div>
 
-<c:import url="jsp/Menu.jsp"/>
+<div id="menu">
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Services</a></li>
+<li><a href="#">Portfolio</a></li>
+</ul>
+</div>
 <!--end header -->
 <!-- main -->
 <div id="main">
@@ -42,9 +53,7 @@
     <p><a href="/java112/TicTacDiagram.jsp">MVC Team challenge Diagram</a></p>
 <h2>Unit 4</h2>
     <p><a href="/java112/employeeSearchDServlet">Employee Search</a></p>
-    <!--<p><a href="jsp/jstl_lab1.jsp">JSTL Lab</a></p>--> 
-    <p><a href="/java112/JSTLLab1Servlet">JSTL Labs</a></p> 
-
+employeeSearchServlet
 
 </div>
 <!-- end main -->
