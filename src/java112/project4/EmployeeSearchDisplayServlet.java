@@ -7,14 +7,14 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
 /**
- * Employee Search Servlet Java112 Project 4
+ * Employee Search Display Servlet Java112 Project 4
  * @author Olena Collins
  */
 @WebServlet(
-        name = "employeeSearchServlet",
-        urlPatterns = { "/employeeSearchDServlet" }
+        name = "employeeSearchDisplayServlet",
+        urlPatterns = { "/employeeSearchDispServlet" }
 )
-public class EmployeeSearchDServlet extends HttpServlet {
+public class EmployeeSearchDisplayServlet extends HttpServlet {
     /**
      * Handles HTTP GET requests.
      *

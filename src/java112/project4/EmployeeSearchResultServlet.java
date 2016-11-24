@@ -7,14 +7,14 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
 /**
- * JSTL Servlet Java112 Unit 4 JSTL Lab
+ * Employee Search Process Result Servlet Java112 Project 4
  * @author Olena Collins
  */
 @WebServlet(
-        name = "JSTLLab1Servlet",
-        urlPatterns = { "/JSTLLab1Servlet" }
+        name = "employeeSearchResultServlet",
+        urlPatterns = { "/employeeSearchResServlet" }
 )
-public class JSTLLab1Servlet extends HttpServlet {
+public class EmployeeSearchResultServlet extends HttpServlet {
     /**
      * Handles HTTP GET requests.
      *
@@ -26,21 +26,8 @@ public class JSTLLab1Servlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
-        String name1 = "Coco";
-        String name2 = "Buddy";
-        String name3 = "Rax";
-        String name4 = "Jerik";
-        ArrayList<String> names= new ArrayList<String>();
-        log("Got into the servlet");
-
-        names.add(name1);
-        names.add(name2);
-        names.add(name3);
-        names.add(name4);
-
-        request.setAttribute("names", names);
-
-        String url = "/jsp/jstl_lab1.jsp";
+        log("Getting into Serch result servlet");
+        String url = "/EmployeeSearch.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
 

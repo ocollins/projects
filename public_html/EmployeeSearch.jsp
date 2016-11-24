@@ -14,7 +14,7 @@
 <h1 align="center">Employee Search</h1>
 
 <div id="container">
-<form action="" name="" id="emplsearch" method="GET">
+<form action="/java112/employeeSearchResServlet" name="" id="emplsearch" method="GET">
     <table class="searchtable">
     <tr><td><label for="byId">Search Employee by ID</label></td>
         <td><input type="radio" name="byId" id="byId" value="ID"></td>
@@ -25,6 +25,7 @@
     <tr><td><label for="termText">Employee ID or Last Name</label></td>
         <td><input type="text" name="term" id="termText" value = ""></td>
     </tr>
+    <tr><td class="submitButton"><input type="submit" value="Submit"></td></tr>
     </table>
 </form>
 </div>

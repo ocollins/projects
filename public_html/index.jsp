@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
+<!--include head element, which is stored in jsp directory-->
 <c:import url="jsp/Head.jsp"/>
 
 <body>
@@ -16,6 +17,7 @@
 
 </div>
 
+<!--include menu, which is stored in the jsp directory-->
 <c:import url="jsp/Menu.jsp"/>
 <!--end header -->
 <!-- main -->
@@ -41,26 +43,16 @@
     <p><a href="/java112/TicTacPaw">MVC Team challenge</a></p>
     <p><a href="/java112/TicTacDiagram.jsp">MVC Team challenge Diagram</a></p>
 <h2>Unit 4</h2>
-    <p><a href="/java112/employeeSearchDServlet">Employee Search</a></p>
+    <p><a href="/java112/employeeSearchDispServlet">Employee Search</a></p>
     <!--<p><a href="jsp/jstl_lab1.jsp">JSTL Lab</a></p>--> 
-    <p><a href="/java112/JSTLLab1Servlet">JSTL Labs</a></p> 
+    <p><a href="/java112/JSTLLab1Servlet">JSTL Lab</a></p> 
 
 
 </div>
 <!-- end main -->
 <!-- footer -->
-<div id="footer">
+<c:import url="jsp/Footer.jsp"/>
 
-<div id="footer_left">&copy; Copyright 2009 Your Website</div>
-
-<div id="footer_right">
-<!-- Please do not change or delete these links. Read the license! Thanks. :-) -->
-Design by <a href="http://www.designity.org/">Free Web Design Community</a>, 
-Courtesy <a href="http://www.openwebdesign.org" target="_blank">OWD</a>, Thanks to 
-<a href="http://www.ecommercewebsites.com.au/" target="_blank">Web Design</a>
-</div>
-
-</div>
 <!-- end footer -->
 </div>
 </body>

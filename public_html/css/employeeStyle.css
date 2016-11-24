@@ -27,3 +27,7 @@ padding: 6px;
 text-align: left;
 }
 
+td.submitButton {
+text-align: center;
+}
+
