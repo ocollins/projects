@@ -16,6 +16,12 @@ public class Search extends java.lang.Object {
 	private boolean employeeFound;
 
 	/**
+	 * Constructor for the Search object
+	 */
+	public Search() {
+	}
+
+	/**
 	 * Returns the value of employeeFound.
 	 */
 	public boolean isEmployeeFound() {
@@ -28,13 +34,6 @@ public class Search extends java.lang.Object {
 	 */
 	public void setEmployeeFound(boolean employeeFound) {
 		this.employeeFound = employeeFound;
-	}
-
-	
-	/**
-	 * Constructor for the Search object
-	 */
-	public Search() {
 	}
 
 	/**

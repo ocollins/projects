@@ -1,7 +1,7 @@
 package java112.project4;
 
 /**
- *  This is an Employee class for project 4
+ *  This is an Employee Directory class for project 4
  *  @author OCollins
  */
 

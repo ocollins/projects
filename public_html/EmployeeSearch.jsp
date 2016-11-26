@@ -17,13 +17,13 @@
 <form action="/java112/employeeSearchResServlet" name="" id="emplsearch" method="GET">
     <table class="searchtable">
     <tr><td><label for="byId">Search Employee by ID</label></td>
-        <td><input type="radio" name="byId" id="byId" value="ID"></td>
+        <td><input type="radio" name="searchType" id="byId" value="I" required></td>
     </tr>
     <tr><td><label for="byId">Search Employee by Last Name</label></td>
-        <td><input type="radio" name="byLastName" id="byLastName" value="lName"></td>
+        <td><input type="radio" name="searchType" id="byLastName" value="N" required></td>
     </tr>
     <tr><td><label for="termText">Employee ID or Last Name</label></td>
-        <td><input type="text" name="term" id="termText" value = ""></td>
+        <td><input type="text" name="searchTerm" id="termText" value = "" required></td>
     </tr>
     <tr><td class="submitButton"><input type="submit" value="Submit"></td></tr>
     </table>

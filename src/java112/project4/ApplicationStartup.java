@@ -25,10 +25,11 @@ public class ApplicationStartup extends HttpServlet {
     */
     public void init() throws ServletException {
         properties = new Properties();
+        log("Application Startup servlet");
         String propertiesFilePath = "/project4.properties";
         //Create ServletContext object
         ServletContext context = getServletContext();
-        //EmployeeDirectory newEmployeeDirectory = null;
+        EmployeeDirectory newEmployeeDirectory = null;
 
         InputStream propertiesStream =
                 this.getClass().getResourceAsStream(propertiesFilePath);
@@ -37,9 +38,9 @@ public class ApplicationStartup extends HttpServlet {
             //Store properties object in the ServletContext container
             context.setAttribute("project4Properties", properties);
 
-            //newEmployeeDirectory = new EmployeeDirectory(properties);
+            newEmployeeDirectory = new EmployeeDirectory(properties);
             //Store new EmployeeDirectory object in the ServletContext container
-            //context.setAttribute("pr4EmployeeDirectory", newEmployeeDirectory);
+            context.setAttribute("pr4EmployeeDirectory", newEmployeeDirectory);
         } catch (IOException iOException) {
             System.out.println("Cannot load the properties file");
             iOException.printStackTrace();
