@@ -33,7 +33,7 @@ public class EmployeeSearchResultServlet extends HttpServlet {
         HttpSession session = request.getSession(true);
         //Create an EmployeeDirectory variable
         EmployeeDirectory employeeDirectory = null;
-        //Create a Search variable
+        //Create a Search object
         Search search = new Search();
 
         ServletContext context = getServletContext();
@@ -46,6 +46,10 @@ public class EmployeeSearchResultServlet extends HttpServlet {
         if(request.getParameter("searchType") != null && request.getParameter("searchTerm") != null) {
             search.setSearchType(request.getParameter("searchType"));
             search.setSearchTerm(request.getParameter("searchTerm"));
+
+            //Call searchById method in the EmployeeDirectory class
+            employeeDirectory.searchById(search);
+
             //Store Search data in the session
             session.setAttribute("searchResult", search);
 
