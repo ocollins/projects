@@ -25,7 +25,7 @@ public class ApplicationStartup extends HttpServlet {
     */
     public void init() throws ServletException {
         properties = new Properties();
-        log("Application Startup servlet");
+
         String propertiesFilePath = "/project4.properties";
         //Create ServletContext object
         ServletContext context = getServletContext();

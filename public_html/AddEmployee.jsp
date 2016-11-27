@@ -17,7 +17,7 @@
 <div id="container">
 <form action="/java112/addNewEmplServlet" name="" id="empladd" method="POST">
     <table class="addtable">
-    <tr><td>Add Employee feedback message</td></tr>
+    <tr><td>${feedbackMessage}</td></tr>
     <tr><td>Employee First Name</td>
         <td><input type="text" name="fname" id="fName" value="" required></td>
     </tr>
