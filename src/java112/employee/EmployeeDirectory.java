@@ -71,8 +71,9 @@ public class EmployeeDirectory {
 
 		Connection connection = createDBConnection();
 
+		//Employee ID
 		int id = Integer.parseInt(search.getSearchTerm());
-		//Debug debug = new Debug();
+		//Create SELECT statement
 		String queryString = "SELECT *"
 				+ " FROM employees WHERE emp_id = " + id + ";";
 		debug.writeDebug("In the EmployeeDirectory query by ID" + queryString );
@@ -80,16 +81,27 @@ public class EmployeeDirectory {
 		try {
 			statement = connection.createStatement();
 			resultSet = statement.executeQuery(queryString);
-			while (resultSet.next()) {
-				String employeeId = resultSet.getString("emp_id");
-				String firstName = resultSet.getString("first_name");
-				String lastName = resultSet.getString("last_name");
-				debug.writeDebug(" Row: " + employeeId + " "
-						+ firstName + " " + lastName);
-			}
+			resultSet.first();
+
 			//Check to see if any employees were found for the ID
 			if (resultSet.getInt("emp_id") != 0) {
 				search.setEmployeeFound(true);
+
+				//Create a new employee object
+				Employee employee = new Employee();
+
+				employee.setEmployeeId(resultSet.getString("emp_id"));
+				employee.setFirstName(resultSet.getString("first_name"));
+				employee.setLastName(resultSet.getString("last_name"));
+				employee.setDepartment(resultSet.getString("dept"));
+				employee.setSSN(resultSet.getString("ssn"));
+				employee.setRoom(resultSet.getString("room"));
+				employee.setPhone(resultSet.getString("phone"));
+
+				//Add employee info to the ArrayList of employees in the Search bean
+				//search.addFoundEmployee(employee);
+				debug.writeDebug("Found employee " + employee.toString());
+
 			} else {
 				search.setEmployeeFound(false);
 			}
@@ -99,6 +111,7 @@ public class EmployeeDirectory {
 			System.err.println("Error in connection to database "
 					+ sqlException);
 			sqlException.printStackTrace();
+
 		} catch (Exception exception) {
 			debug.writeDebug("General Error " + exception.getMessage());
 			System.err.println("General Error");
@@ -124,5 +137,6 @@ public class EmployeeDirectory {
 			}
 		}
 	}
+
 
 }

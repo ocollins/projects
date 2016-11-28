@@ -24,6 +24,10 @@ table.addtable {
 margin: 0 auto;
 }
 
+table.resulttable {
+margin: 0 auto;
+}
+
 td {
 padding: 6px;
 /*border: 1px solid black;*/

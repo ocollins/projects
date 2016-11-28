@@ -12,19 +12,21 @@ public class Search extends java.lang.Object {
 
     private String searchType;
     private String searchTerm;
-    private ArrayList<ResultSet> searchResults;
+    private ArrayList<Employee> employees;
 	private boolean employeeFound;
 
 	/**
 	 * Constructor for the Search object
 	 */
 	public Search() {
+		employees = new ArrayList<Employee>();
 	}
 
 	/**
 	 * Returns the value of employeeFound.
 	 */
 	public boolean isEmployeeFound() {
+
 		return employeeFound;
 	}
 
@@ -33,6 +35,7 @@ public class Search extends java.lang.Object {
 	 * @param employeeFound The value to assign employeeFound.
 	 */
 	public void setEmployeeFound(boolean employeeFound) {
+
 		this.employeeFound = employeeFound;
 	}
 
@@ -40,16 +43,18 @@ public class Search extends java.lang.Object {
 	 * Returns the value of searchResults.
 	 * @return searchResulst
 	 */
-	public ArrayList<ResultSet> getSearchResults() {
-		return searchResults;
+	public ArrayList<Employee> getEmployees() {
+
+		return employees;
 	}
 
 	/**
 	 * Sets the value of searchResults.
 	 * @param searchResults The value to assign searchResults.
 	 */
-	public void setSearchResults(ArrayList<ResultSet> searchResults) {
-		this.searchResults = searchResults;
+	public void setEmployees(ArrayList<Employee> employees) {
+
+		this.employees = employees;
 	}
 
 	/**
@@ -57,6 +62,7 @@ public class Search extends java.lang.Object {
 	 * @return searchTerm
 	 */
 	public String getSearchTerm() {
+
 		return searchTerm;
 	}
 
@@ -65,6 +71,7 @@ public class Search extends java.lang.Object {
 	 * @param searchTerm The value to assign searchTerm.
 	 */
 	public void setSearchTerm(String searchTerm) {
+
 		this.searchTerm = searchTerm;
 	}
 
@@ -73,6 +80,7 @@ public class Search extends java.lang.Object {
 	 * @return searchType
 	 */
 	public String getSearchType() {
+
 		return searchType;
 	}
 
@@ -81,14 +89,16 @@ public class Search extends java.lang.Object {
 	 * @param searchType The value to assign searchType.
 	 */
 	public void setSearchType(String searchType) {
+
 		this.searchType = searchType;
 	}
 
 	/**
 	 * Adds the employee information
+	 * @param employee Employee object
 	 */
 	public void addFoundEmployee (Employee employee) {
-
+		employees.add(employee);
 	}
 
 }
