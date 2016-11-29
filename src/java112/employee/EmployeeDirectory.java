@@ -62,6 +62,88 @@ public class EmployeeDirectory {
 	}
 
 	/**
+	 * Add a new employee information
+	 * @param
+	 */
+	public void addNewEmployee(String fName, String lName, String sSN, String dept, String room,
+							   String phone) {
+		Statement statement = null;
+		ResultSet resultSet = null;
+
+		Connection connection = createDBConnection();
+
+		//Create the INSERT statement
+		PreparedStatement insertStatement =
+				connection.prepareStatement("INSERT INTO employees " +
+						"(first_name,last_name,ssn,dept,room,phone) " +
+						"VALUES (?, ?, ?, ?, ?, ?)");
+		debug.writeDebug("In the EmployeeDirectory Insert " + insertStatement );
+
+		try {
+			//Populate parameters
+			insertStatement.setString(1, fName);
+			insertStatement.setString(2, lName);
+			insertStatement.setString(3, sSN);
+			insertStatement.setString(4, dept);
+			insertStatement.setString(5, room);
+			insertStatement.setString(6, phone);
+
+			//Check to see if any employees were found for the ID
+			if (resultSet.getInt("emp_id") != 0) {
+				search.setEmployeeFound(true);
+
+				//Create a new employee object
+				Employee employee = new Employee();
+
+				employee.setEmployeeId(resultSet.getString("emp_id"));
+				employee.setFirstName(resultSet.getString("first_name"));
+				employee.setLastName(resultSet.getString("last_name"));
+				employee.setDepartment(resultSet.getString("dept"));
+				employee.setSocNumber(resultSet.getString("ssn"));
+				employee.setRoom(resultSet.getString("room"));
+				employee.setPhone(resultSet.getString("phone"));
+
+				//Add employee info to the ArrayList of employees in the Search bean
+				search.addFoundEmployee(employee);
+				debug.writeDebug("Found employee " + employee.toString());
+
+			} else {
+				search.setEmployeeFound(false);
+			}
+
+		} catch (SQLException sqlException) {
+			debug.writeDebug("Error in connection to database "	+ sqlException);
+			System.err.println("Error in connection to database "
+					+ sqlException);
+			sqlException.printStackTrace();
+
+		} catch (Exception exception) {
+			debug.writeDebug("General Error " + exception.getMessage());
+			System.err.println("General Error");
+			exception.printStackTrace();
+		} finally {
+			try {
+				if (resultSet != null) {
+					resultSet.close();
+				}
+				if (statement != null) {
+					statement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (SQLException sqlException) {
+				System.err.println("Error in connection.ecting to database "
+						+ sqlException);
+				sqlException.printStackTrace();
+			} catch (Exception exception) {
+				System.err.println("General Error");
+				exception.printStackTrace();
+			}
+		}
+	}
+
+	/**
 	 * Search for employee by ID
 	 * @param search Search object
 	 */
@@ -150,18 +232,18 @@ public class EmployeeDirectory {
 
 		//Employee last name
 		String lName = search.getSearchTerm();
+
 		//Create SELECT statement
 		String queryString = "SELECT *"
-				+ " FROM employees WHERE last_name = " + lName + ";";
+				+ " FROM employees WHERE last_name = \"" + lName + "\";";
 		debug.writeDebug("In the EmployeeDirectory query by last name " + queryString );
 
 		try {
 			statement = connection.createStatement();
 			resultSet = statement.executeQuery(queryString);
-			resultSet.first();
+			//resultSet.first();
 
-			//Check to see if any employees were found for the last name
-			if (resultSet.getInt("emp_id") != 0) {
+			while (resultSet.next()) {
 				search.setEmployeeFound(true);
 
 				//Create a new employee object
@@ -178,9 +260,6 @@ public class EmployeeDirectory {
 				//Add employee info to the ArrayList of employees in the Search bean
 				search.addFoundEmployee(employee);
 				debug.writeDebug("Found employee " + employee.toString());
-
-			} else {
-				search.setEmployeeFound(false);
 			}
 
 		} catch (SQLException sqlException) {

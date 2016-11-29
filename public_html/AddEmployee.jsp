@@ -37,9 +37,9 @@
         <td><input type="text" name="phone" id="phone" value="" required></td>
     </tr>
     <tr class="submitButton"><td ><input type="submit" value="Submit"></td></tr>
-    <tr><td><a href="/java112">HOME</a></td></tr>
     </table>
 </form>
+<p class="home"><a href="/java112">HOME</a></p>
 </div>
 
 </body>

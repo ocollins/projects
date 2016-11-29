@@ -35,6 +35,9 @@ public class EmployeeSearchResultServlet extends HttpServlet {
         EmployeeDirectory employeeDirectory = null;
         //Create a Search object
         Search search = new Search();
+        //Get search type
+        String searchType = null;
+        String searchTerm = null;
 
         ServletContext context = getServletContext();
         //Get SearchDirectory object from the ServletContext container
@@ -44,11 +47,22 @@ public class EmployeeSearchResultServlet extends HttpServlet {
 
         //Get search type and search criteria from the EmployeeSearch form
         if(request.getParameter("searchType") != null && request.getParameter("searchTerm") != null) {
-            search.setSearchType(request.getParameter("searchType"));
-            search.setSearchTerm(request.getParameter("searchTerm"));
+            searchType = request.getParameter("searchType");
+            searchTerm = request.getParameter("searchTerm");
+            search.setSearchType(searchType);
+            search.setSearchTerm(searchTerm);
+            debug.writeDebug(searchType);
 
-            //Call searchById method in the EmployeeDirectory class
-            employeeDirectory.searchById(search);
+            if (searchType.equals("I")) {
+                debug.writeDebug("Search type is I");
+                //Call searchById method in the EmployeeDirectory class
+                employeeDirectory.searchById(search);
+
+            } else if (searchType.equals("N")) {
+                debug.writeDebug("Search type is N");
+                employeeDirectory.searchByLastName(search);
+
+            }
 
             //Store Search data in the session
             session.setAttribute("searchResult", search);

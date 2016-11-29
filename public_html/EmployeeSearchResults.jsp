@@ -15,29 +15,36 @@
 <body>
 
 <h1 align="center">Employee Search Result</h1>
-<p>${searchResult.employeeFound}</p>
 
-<c:if test="${searchResult.employeeFound}">
-    <p>Found an employee</p>
-</c:if>
- 
-<div id="container">
-    <table class="resulttable">
-    <c:if test="${searchResult.employeeFound}">
-        <c:forEach var="employee" items="${searchResult.employees}">
-        <tr class="displayresults"><td>${employee.employeeId}</td>
-            <td>${employee.firstName}</td>
-            <td>${employee.lastName}</td>
-            <td>${employee.socNumber}</td>
-            <td>${employee.department}</td>
-            <td>${employee.room}</td>
-            <td>${employee.phone}</td>
-        </tr>
-        
-        </c:forEach>
-    </c:if>
-    </table>
-</div>
-<p text-align="center"><a href="/java112">HOME</a></p>
+<c:choose>
+ <c:when test="${searchResult.employeeFound}">
+  <div id="container">
+   <table class="resulttable">
+    <th>Employee ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>SSN</th>
+    <th>Department</th>
+    <th>Room Number</th>
+    <th>Phone Number</th>
+    <c:forEach var="employee" items="${searchResult.employees}">
+     <tr class="displayresults"><td>${employee.employeeId}</td>
+                                <td>${employee.firstName}</td>
+                                <td>${employee.lastName}</td>
+                                <td>${employee.socNumber}</td>
+                                <td>${employee.department}</td>
+                                <td>${employee.room}</td>
+                                <td>${employee.phone}</td>
+     </tr>
+    </c:forEach>
+   </table>
+  </div>
+ </c:when>
+ <c:otherwise>
+    <h2 class="noemployeemessage">No Employee found</h2>
+ </c:otherwise>   
+</c:choose>
+
+<p class="home"><a href="/java112">HOME</a></p>
 </body>
 </html>

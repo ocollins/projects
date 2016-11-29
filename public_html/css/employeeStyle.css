@@ -25,7 +25,9 @@ margin: 0 auto;
 }
 
 table.resulttable {
+width: 50%;
 margin: 0 auto;
+font: 40px;
 }
 
 td {
@@ -39,7 +41,14 @@ border: 1px solid black;
 text-align: left;
 }
 
-tr.submitButton {
+
+h2.noemployeemessage {
+text-align: center;
+}
+
+p.home {
+padding-top: 150px;
+font: 30px;
 text-align: center;
 }
 
