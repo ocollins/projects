@@ -9,7 +9,7 @@ public class Employee {
     private String employeeId;
     private String firstName;
     private String lastName;
-    private String sSN;
+    private String socNumber;
     private String department;
     private String room;
     private String phone;
@@ -19,6 +19,7 @@ public class Employee {
 	 * @return phone
 	 */
 	public String getPhone() {
+
 		return phone;
 	}
 
@@ -27,6 +28,7 @@ public class Employee {
 	 * @param phone The value to assign phone.
 	 */
 	public void setPhone(String phone) {
+
 		this.phone = phone;
 	}
 
@@ -35,6 +37,7 @@ public class Employee {
 	 * @return room
 	 */
 	public String getRoom() {
+
 		return room;
 	}
 
@@ -43,6 +46,7 @@ public class Employee {
 	 * @param room The value to assign room.
 	 */
 	public void setRoom(String room) {
+
 		this.room = room;
 	}
 
@@ -51,6 +55,7 @@ public class Employee {
 	 * @return department
 	 */
 	public String getDepartment() {
+
 		return department;
 	}
 
@@ -67,18 +72,18 @@ public class Employee {
 	 * Returns the value of sSN.
 	 * @return sSN
 	 */
-	public String getSSN() {
+	public String getSocNumber() {
 
-		return sSN;
+		return socNumber;
 	}
 
 	/**
 	 * Sets the value of sSN.
 	 * @param sSN The value to assign sSN.
 	 */
-	public void setSSN(String sSN) {
+	public void setSocNumber(String socNumber) {
 
-		this.sSN = sSN;
+		this.socNumber = socNumber;
 	}
     
 	/**
@@ -144,7 +149,7 @@ public class Employee {
 				 " First Name " + getFirstName() +
 				 " Last Name " + getLastName() +
 				 " Department " + getDepartment() +
-				 " SSN " + getSSN() +
+				 " SSN " + getSocNumber() +
 				 " Room Number " + getRoom() +
 				 " Phone Number " + getPhone();
 	 }

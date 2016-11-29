@@ -30,7 +30,12 @@ margin: 0 auto;
 
 td {
 padding: 6px;
-/*border: 1px solid black;*/
+text-align: left;
+}
+
+tr.displayresults td {
+padding: 6px;
+border: 1px solid black;
 text-align: left;
 }
 

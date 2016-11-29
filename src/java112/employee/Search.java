@@ -19,6 +19,7 @@ public class Search extends java.lang.Object {
 	 * Constructor for the Search object
 	 */
 	public Search() {
+
 		employees = new ArrayList<Employee>();
 	}
 
@@ -98,6 +99,7 @@ public class Search extends java.lang.Object {
 	 * @param employee Employee object
 	 */
 	public void addFoundEmployee (Employee employee) {
+
 		employees.add(employee);
 	}
 

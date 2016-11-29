@@ -20,17 +20,20 @@
 <c:if test="${searchResult.employeeFound}">
     <p>Found an employee</p>
 </c:if>
-
+ 
 <div id="container">
     <table class="resulttable">
     <c:if test="${searchResult.employeeFound}">
-        <c:forEach var="employee" items="${searchResult.employees.employeeId}">
-        <tr><td>Search type </td>
-            <td>${searchResult.searchType}</td>
+        <c:forEach var="employee" items="${searchResult.employees}">
+        <tr class="displayresults"><td>${employee.employeeId}</td>
+            <td>${employee.firstName}</td>
+            <td>${employee.lastName}</td>
+            <td>${employee.socNumber}</td>
+            <td>${employee.department}</td>
+            <td>${employee.room}</td>
+            <td>${employee.phone}</td>
         </tr>
-        <tr><td>Search term</td>
-            <td>${searchResult.searchTerm}</td>
-        </tr>
+        
         </c:forEach>
     </c:if>
     </table>
