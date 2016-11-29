@@ -34,6 +34,9 @@ public class AddEmployeeActionServlet extends HttpServlet {
         //response.setContentType("text/html");
         //Create session variable
         HttpSession session = request.getSession(true);
+        boolean addEmployeeSuccess = false;
+        String message = " ";
+
         Debug debug = new Debug();
         debug.writeDebug("In the Add Employee Action servlet");
 
@@ -50,8 +53,17 @@ public class AddEmployeeActionServlet extends HttpServlet {
         String phone = request.getParameter("phone");
         debug.writeDebug(firstName + lastName + sSN);
 
-        String message = "New Employee Added";
-        session.setAttribute("feedbackMessage", message);
+        //Call EmployeeDirectory to add the new employee to the DB
+        addEmployeeSuccess = directory.addNewEmployee(firstName,
+                                   lastName, sSN, department, room, phone);
+
+        if (addEmployeeSuccess) {
+            message = "New Employee Added";
+            session.setAttribute("feedbackMessage", message);
+        } else {
+            message = "Error Adding New Employee";
+            session.setAttribute("feedbackMessage", message);
+        }
 
         String url = "/java112/AddEmployee.jsp";
         response.sendRedirect(url);

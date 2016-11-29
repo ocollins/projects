@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f05e4e5a-50f6-4aca-bd56-b71476292a11" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/AddEmployee.jsp" afterPath="$PROJECT_DIR$/public_html/AddEmployee.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/EmployeeSearchResults.jsp" afterPath="$PROJECT_DIR$/public_html/EmployeeSearchResults.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/css/employeeStyle.css" afterPath="$PROJECT_DIR$/public_html/css/employeeStyle.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java112/employee/EmployeeDirectory.java" afterPath="$PROJECT_DIR$/src/java112/employee/EmployeeDirectory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java112/project4/EmployeeSearchResultServlet.java" afterPath="$PROJECT_DIR$/src/java112/project4/EmployeeSearchResultServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java112/project4/AddEmployeeActionServlet.java" afterPath="$PROJECT_DIR$/src/java112/project4/AddEmployeeActionServlet.java" />
     </list>
     <ignored path="projects.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,9 +37,11 @@
       <file leaf-file-name="Search.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java112/employee/Search.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1870">
-              <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="1738">
+              <caret line="79" column="39" selection-start-line="79" selection-start-column="39" selection-end-line="79" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,23 +59,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddEmployeeActionServlet.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AddEmployeeActionServlet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/java112/project4/AddEmployeeActionServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+            <state relative-caret-position="518">
+              <caret line="63" column="50" selection-start-line="63" selection-start-column="50" selection-end-line="63" selection-end-column="50" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmployeeDirectory.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EmployeeDirectory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java112/employee/EmployeeDirectory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="49">
-              <caret line="69" column="35" selection-start-line="69" selection-start-column="35" selection-end-line="69" selection-end-column="35" />
+            <state relative-caret-position="131">
+              <caret line="72" column="39" selection-start-line="72" selection-start-column="39" selection-end-line="72" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -165,13 +162,13 @@
         <option value="$PROJECT_DIR$/src/java112/project4/EmployeeSearchDisplayServlet.java" />
         <option value="$PROJECT_DIR$/src/java112/Debug.java" />
         <option value="$PROJECT_DIR$/src/java112/project4/AddEmployeeDisplayServlet.java" />
-        <option value="$PROJECT_DIR$/src/java112/project4/AddEmployeeActionServlet.java" />
         <option value="$PROJECT_DIR$/src/java112/project4/Debug.java" />
         <option value="$PROJECT_DIR$/src/java112/project4/ApplicationStartup.java" />
         <option value="$PROJECT_DIR$/src/java112/employee/Search.java" />
         <option value="$PROJECT_DIR$/src/java112/employee/Employee.java" />
         <option value="$PROJECT_DIR$/src/java112/project4/EmployeeSearchResultServlet.java" />
         <option value="$PROJECT_DIR$/src/java112/employee/EmployeeDirectory.java" />
+        <option value="$PROJECT_DIR$/src/java112/project4/AddEmployeeActionServlet.java" />
       </list>
     </option>
   </component>
@@ -857,12 +854,12 @@
       <workItem from="1479954914164" duration="38817000" />
       <workItem from="1480296344505" duration="5685000" />
       <workItem from="1480373535167" duration="7151000" />
-      <workItem from="1480386072785" duration="3739000" />
+      <workItem from="1480386072785" duration="5136000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="232818000" />
+    <option name="totallyTimeSpent" value="234215000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="75" y="82" width="1839" height="998" extended-state="0" />
@@ -1222,14 +1219,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java112/employee/Search.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1870">
-          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/java112/employee/Employee.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3278">
@@ -1237,16 +1226,6 @@
           <folding>
             <element signature="e#2283#2284#0" expanded="false" />
             <element signature="e#2318#2319#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java112/project4/AddEmployeeActionServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1259,13 +1238,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java112/employee/EmployeeDirectory.java">
+    <entry file="file://$PROJECT_DIR$/src/java112/employee/Search.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="69" column="35" selection-start-line="69" selection-start-column="35" selection-end-line="69" selection-end-column="35" />
+        <state relative-caret-position="1738">
+          <caret line="79" column="39" selection-start-line="79" selection-start-column="39" selection-end-line="79" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java112/employee/EmployeeDirectory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="72" column="39" selection-start-line="72" selection-start-column="39" selection-end-line="72" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java112/project4/AddEmployeeActionServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="63" column="50" selection-start-line="63" selection-start-column="50" selection-end-line="63" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
