@@ -7,14 +7,14 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
 /**
- * Add Employee Display Servlet Java112 Project 4
+ * Analyze file display Servlet Java112 Project 4
  * @author Olena Collins
  */
 @WebServlet(
-        name = "addEmployeeDispServlet",
-        urlPatterns = { "/addEmplDispServlet" }
+        name = "AnalyzerDispServlet",
+        urlPatterns = { "/analyzerDispServlet" }
 )
-public class AddEmployeeDisplayServlet extends HttpServlet {
+public class AnalyzerDisplayServlet extends HttpServlet {
     /**
      * Handles HTTP GET requests.
      *
@@ -28,13 +28,13 @@ public class AddEmployeeDisplayServlet extends HttpServlet {
         response.setContentType("text/html");
 
         Debug debug = new Debug();
-        debug.writeDebug("In the Add Employee Display servlet");
+        debug.writeDebug("In the Analyzer Display servlet");
 
         //Remove the old session
         HttpSession session = request.getSession(true);
         session.invalidate();
 
-        String url = "/AddEmployee.jsp";
+        String url = "/AnalyzeFile.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
 

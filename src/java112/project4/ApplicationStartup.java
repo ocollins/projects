@@ -18,6 +18,7 @@ import javax.servlet.annotation.*;
 )
 public class ApplicationStartup extends HttpServlet {
     Properties properties;
+    Properties analyzerProperties;
 
     /**
     *  Servlet init method
@@ -25,22 +26,42 @@ public class ApplicationStartup extends HttpServlet {
     */
     public void init() throws ServletException {
         properties = new Properties();
+        analyzerProperties = new Properties();
 
+        //Project 4 properties
         String propertiesFilePath = "/project4.properties";
+        //Analyzer properties
+        String analyzerFilePath = "/analyzer.properties";
+
         //Create ServletContext object
         ServletContext context = getServletContext();
+
         EmployeeDirectory newEmployeeDirectory = null;
+        //AnalyzeFile newAnalyzeFile = null;
 
         InputStream propertiesStream =
                 this.getClass().getResourceAsStream(propertiesFilePath);
+        InputStream analyzerStream =
+                this.getClass().getResourceAsStream(analyzerFilePath);
+
         try {
             properties.load(propertiesStream);
+            analyzerProperties.load(analyzerStream);
+
             //Store properties object in the ServletContext container
             context.setAttribute("project4Properties", properties);
+            context.setAttribute("analyzerProperties", analyzerProperties);
 
+            //Create new objects
             newEmployeeDirectory = new EmployeeDirectory(properties);
+            //newAnalyzeFile = new AnalyzeFile();
+
             //Store new EmployeeDirectory object in the ServletContext container
             context.setAttribute("pr4EmployeeDirectory", newEmployeeDirectory);
+
+            //Store new AnalyzeFile object in the ServletContext container
+            //context.setAttribute("analyzeFile", newAnalyzeFile);
+
         } catch (IOException iOException) {
             System.out.println("Cannot load the properties file");
             iOException.printStackTrace();

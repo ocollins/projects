@@ -45,9 +45,8 @@
 <h2>Unit 4</h2>
     <p><a href="/java112/employeeSearchDispServlet">Employee Search</a></p>
     <p><a href="/java112/addEmplDispServlet">Add New Employee</a></p>    
-    <!--<p><a href="jsp/jstl_lab1.jsp">JSTL Lab</a></p>--> 
+    <p><a href="/java112/analyzerDispServlet">Analyze File</a></p> 
     <p><a href="/java112/JSTLLab1Servlet">JSTL Lab</a></p> 
-
 
 </div>
 <!-- end main -->

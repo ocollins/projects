@@ -1,0 +1,36 @@
+/*--All forms--*/
+body {
+font-family: Tahoma, Geneva, sans-serif;
+background-image: url(../images/employee_bg.jpg);
+background-repeat: no-repeat;
+background-size: 100%;
+
+}
+
+h1{
+font-size: 50px;
+margin-top: 80px;
+margin-bottom: 80px;
+}
+
+#container { 
+margin: 0 auto; 
+text-align: center;
+} 
+
+p{
+font-size: 20px;
+margin-right: 50px;
+}
+
+input.selectfile {
+border: 1px solid grey;
+border-radius: 4px;
+color: black;
+background-color: white;
+}
+
+p.home {
+text-align: center;
+margin-top: 100px;
+}

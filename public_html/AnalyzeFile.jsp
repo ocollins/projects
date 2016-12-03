@@ -13,14 +13,15 @@
  <h1 align="center">Analyze File</h1> 
  
  <div id="container"> 
- <form action="/java112/AnalyzeFileServlet" name="" id="analyzefile" method="GET"> 
-     <p><label>Enter File to Analyze</label>
-        <input type="file" name="loadInputFile" id="loadInputFile" value = "" required/>
+ <form action="/java112/analyzeFileServlet" name="" id="analyzefile" method="GET"> 
+     <p><label>Select File to Analyze</label>
+        <input type="file" name="filename" id="filename" 
+               value = "" class="selectfile" title=" " required/>
      </p> 
      <p><input type="submit" value="Analyze File"/></pr> 
      </table> 
  </form> 
  </div> 
-
+ <p class="home"><a href="/java112">HOME</a></p>
  </body> 
  </html> 
