@@ -53,10 +53,11 @@ public class AddEmployeeActionServlet extends HttpServlet {
         String phone = request.getParameter("phone");
         debug.writeDebug(firstName + lastName + sSN);
 
+        debug.writeDebug("addEmployeeSuccess bofore " + addEmployeeSuccess);
         //Call EmployeeDirectory to add the new employee to the DB
         addEmployeeSuccess = directory.addNewEmployee(firstName,
                                    lastName, sSN, department, room, phone);
-
+        debug.writeDebug("addEmployeeSuccess " + addEmployeeSuccess);
         if (addEmployeeSuccess) {
             message = "New Employee Added";
             session.setAttribute("feedbackMessage", message);

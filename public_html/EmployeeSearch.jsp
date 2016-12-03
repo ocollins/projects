@@ -9,6 +9,15 @@
 <link href="css/employeeStyle.css" rel="stylesheet" type="text/css"/>
 </head>
 
+<script>
+function check(searchType) {
+    document.getElementById("answer").value=browser;
+    var input = document.createElement("input");
+    input.type = "text";
+    document.body.appendChild(input);
+}
+</script>
+
 <body>
 
 <h1 align="center">Employee Search</h1>

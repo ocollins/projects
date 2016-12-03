@@ -1,10 +1,10 @@
+/*--All forms--*/
 body { 
 margin: 0; 
 font-family: Tahoma, Geneva, sans-serif;
 background-image: url(../images/employee_bg.jpg);
 background-repeat: no-repeat;
 background-size: 100%;
-
 } 
 
 h1 {
@@ -16,23 +16,29 @@ font-size:  60px;
 text-align: center;
 }
 
-table.searchtable {
-margin: 0 auto;
+td {
+padding: 6px;
+text-align: left;
 }
 
-table.addtable {
-margin: 0 auto;
+/*Home(back to index page) link*/
+p.home {
+padding-top: 150px;
+font: 30px;
+text-align: center;
 }
 
+/*--Search forms--*/
+/*Search employee result table*/
 table.resulttable {
 width: 50%;
 margin: 0 auto;
 font: 40px;
+text-align: left;
 }
 
-td {
-padding: 6px;
-text-align: left;
+table.searchtable {
+margin: 0 auto;
 }
 
 tr.displayresults td {
@@ -46,9 +52,19 @@ h2.noemployeemessage {
 text-align: center;
 }
 
-p.home {
-padding-top: 150px;
-font: 30px;
-text-align: center;
+/*--Add employee form--*/
+/*Add employee feedback message*/
+p.fmessage {
+font: 40px;
+font-weight: bold;
 }
+
+/*Add employee table*/
+table.addtable {
+margin: 0 auto;
+}
+
+
+
+
 

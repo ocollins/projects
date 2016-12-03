@@ -69,6 +69,7 @@ public class EmployeeDirectory {
 							   String phone) {
 		Statement statement = null;
 		ResultSet resultSet = null;
+		boolean success = false;
 
 		//Call Create connection method
 		Connection connection = createDBConnection();
@@ -79,7 +80,7 @@ public class EmployeeDirectory {
 					connection.prepareStatement("INSERT INTO employees " +
 							"(first_name,last_name,ssn,dept,room,phone) " +
 							"VALUES (?, ?, ?, ?, ?, ?)");
-			debug.writeDebug("In the EmployeeDirectory Insert " + insertStatement );
+
 
 			//Populate parameters
 			insertStatement.setString(1, fName);
@@ -88,29 +89,26 @@ public class EmployeeDirectory {
 			insertStatement.setString(4, dept);
 			insertStatement.setString(5, room);
 			insertStatement.setString(6, phone);
+			debug.writeDebug("In the EmployeeDirectory Insert " + insertStatement );
 
 			//Execute the INSERT statement
 			insertStatement.executeUpdate();
 
-			//Check to see if any employees were found for the ID
-//			if (resultSet.getInt("emp_id") != 0) {
-//				search.setEmployeeFound(true);
-//
-//			} else {
-//				search.setEmployeeFound(false);
-//			}
-
-
+			success = true;
 		} catch (SQLException sqlException) {
 			debug.writeDebug("Error in connection to database "	+ sqlException);
 			System.err.println("Error in connection to database "
 					+ sqlException);
+			success = false;
 			sqlException.printStackTrace();
+			debug.writeDebug("Returning false");
 
 		} catch (Exception exception) {
 			debug.writeDebug("General Error " + exception.getMessage());
 			System.err.println("General Error");
+			success = false;
 			exception.printStackTrace();
+
 		} finally {
 			try {
 				if (resultSet != null) {
@@ -125,13 +123,17 @@ public class EmployeeDirectory {
 			} catch (SQLException sqlException) {
 				System.err.println("Error in connection.ecting to database "
 						+ sqlException);
+				success = false;
 				sqlException.printStackTrace();
+
 			} catch (Exception exception) {
 				System.err.println("General Error");
+				success = false;
 				exception.printStackTrace();
 			}
 		}
-		return true;
+		debug.writeDebug("Returning success value " + success);
+		return success;
 	}
 
 	/**
@@ -141,6 +143,7 @@ public class EmployeeDirectory {
 	public void searchById(Search search) {
 		Statement statement = null;
 		ResultSet resultSet = null;
+		String formatString = null;
 
 		Connection connection = createDBConnection();
 
@@ -167,7 +170,8 @@ public class EmployeeDirectory {
 				employee.setFirstName(resultSet.getString("first_name"));
 				employee.setLastName(resultSet.getString("last_name"));
 				employee.setDepartment(resultSet.getString("dept"));
-				employee.setSocNumber(resultSet.getString("ssn"));
+				employee.setSocNumber
+						       (resultSet.getString("ssn"));
 				employee.setRoom(resultSet.getString("room"));
 				employee.setPhone(resultSet.getString("phone"));
 
