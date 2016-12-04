@@ -167,6 +167,11 @@
       <fileset dir="${static}/images"/>
     </copy>
 
+     <!-- copy the output to the build/output dir-->
+    <copy todir="${build}/output">
+      <fileset dir="${project_home}/output"/>
+    </copy>
+
     <!-- copy the JSP pages to the web-app dir-->
     <copy todir="${build}">
       <fileset dir="${static}">

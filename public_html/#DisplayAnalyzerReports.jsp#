@@ -14,9 +14,7 @@
  <h1 align="center">Analyzer Reports</h1> 
  
  <div id="container" text-allign="center">
- <p>${SummaryReport}</p>
     
-	<!--<p><a href = "/java112/output/test.html">Test</a></p>-->
     <p><a href = "${SummaryFile}" target="_blank">Summary</a></p>
     <p><a href = "output/unique_tokens.html" target="_blank"></a>Unique Words</p>
 	<p><a href = "output/unique_tokens.html" target="_blank"></a>Unique Words and Occurences</p>

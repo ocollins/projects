@@ -5,6 +5,7 @@ import java.util.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
+import java112.analyzer.*;
 
 /**
  *  Employee Management Application Startup Servlet for Project 4
@@ -19,6 +20,7 @@ import javax.servlet.annotation.*;
 public class ApplicationStartup extends HttpServlet {
     Properties properties;
     Properties analyzerProperties;
+    Debug debug = new Debug();
 
     /**
     *  Servlet init method
@@ -37,7 +39,7 @@ public class ApplicationStartup extends HttpServlet {
         ServletContext context = getServletContext();
 
         EmployeeDirectory newEmployeeDirectory = null;
-        //AnalyzeFile newAnalyzeFile = null;
+        AnalyzeFile newAnalyzeFile = null;
 
         InputStream propertiesStream =
                 this.getClass().getResourceAsStream(propertiesFilePath);
@@ -51,6 +53,7 @@ public class ApplicationStartup extends HttpServlet {
             //Store properties object in the ServletContext container
             context.setAttribute("project4Properties", properties);
             context.setAttribute("analyzerProperties", analyzerProperties);
+            debug.writeDebug("In the ApplStartup servlet");
 
             //Create new objects
             newEmployeeDirectory = new EmployeeDirectory(properties);
@@ -61,6 +64,9 @@ public class ApplicationStartup extends HttpServlet {
 
             //Store new AnalyzeFile object in the ServletContext container
             //context.setAttribute("analyzeFile", newAnalyzeFile);
+
+            //Store the name of analyzer properties file in the ServletContext container
+            context.setAttribute("analyzerPropertiesFile", analyzerFilePath);
 
         } catch (IOException iOException) {
             System.out.println("Cannot load the properties file");
