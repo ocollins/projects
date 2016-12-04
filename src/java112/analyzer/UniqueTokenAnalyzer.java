@@ -88,6 +88,7 @@ public class UniqueTokenAnalyzer implements Analyzer{
     /**
      *  Produce a List of Unique tokens.
      *  Write the list into an HTML file.
+     *  @param outputDirectory
      */
     public void writeOutputHtmlFile(String outputDirectory) {
         //Get name of the output file from the properties file

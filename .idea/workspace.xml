@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f05e4e5a-50f6-4aca-bd56-b71476292a11" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public_html/#DisplayAnalyzerReports.jsp#" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/analyzer.properties" afterPath="$PROJECT_DIR$/config/analyzer.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/DisplayAnalyzerReports.jsp" afterPath="$PROJECT_DIR$/public_html/DisplayAnalyzerReports.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smallFile.txt" afterPath="$PROJECT_DIR$/smallFile.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java112/analyzer/SummaryReport.java" afterPath="$PROJECT_DIR$/src/java112/analyzer/SummaryReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/index.jsp" afterPath="$PROJECT_DIR$/public_html/index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java112/analyzer/UniqueTokenAnalyzer.java" afterPath="$PROJECT_DIR$/src/java112/analyzer/UniqueTokenAnalyzer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java112/employee/EmployeeDirectory.java" afterPath="$PROJECT_DIR$/src/java112/employee/EmployeeDirectory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java112/project4/AddEmployeeActionServlet.java" afterPath="$PROJECT_DIR$/src/java112/project4/AddEmployeeActionServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java112/project4/AddEmployeeDisplayServlet.java" afterPath="$PROJECT_DIR$/src/java112/project4/AddEmployeeDisplayServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java112/project4/AnalyzerDisplayServlet.java" afterPath="$PROJECT_DIR$/src/java112/project4/AnalyzerDisplayServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java112/project4/RunAnalyzerServlet.java" afterPath="$PROJECT_DIR$/src/java112/project4/RunAnalyzerServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java112/project4/EmployeeSearchResultServlet.java" afterPath="$PROJECT_DIR$/src/java112/project4/EmployeeSearchResultServlet.java" />
     </list>
     <ignored path="projects.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,14 +38,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApplicationStartup.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Project4SessionLabServlet.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/java112/project4/Project4SessionLabServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="507">
+              <caret line="42" column="48" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ApplicationStartup.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java112/project4/ApplicationStartup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
+            <state relative-caret-position="456">
               <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -72,8 +71,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config/BeanOne.java" />
-        <option value="$PROJECT_DIR$/src/java112/labs3/MvcDemo.java" />
         <option value="$PROJECT_DIR$/public_html/beanOneDemo.jsp" />
         <option value="$PROJECT_DIR$/public_html/HttpRequestData.jsp" />
         <option value="$PROJECT_DIR$/public_html/Project3_Properties.jsp" />
@@ -114,15 +111,17 @@
         <option value="$PROJECT_DIR$/src/java112/project4/Debug.java" />
         <option value="$PROJECT_DIR$/src/java112/employee/Search.java" />
         <option value="$PROJECT_DIR$/src/java112/employee/Employee.java" />
-        <option value="$PROJECT_DIR$/src/java112/project4/EmployeeSearchResultServlet.java" />
         <option value="$PROJECT_DIR$/src/java112/project4/ApplicationStartup.java" />
         <option value="$PROJECT_DIR$/src/java112/analyzer/SummaryReport.java" />
-        <option value="$PROJECT_DIR$/src/java112/analyzer/UniqueTokenAnalyzer.java" />
         <option value="$PROJECT_DIR$/src/java112/project4/RunAnalyzerServlet.java" />
         <option value="$PROJECT_DIR$/src/java112/employee/EmployeeDirectory.java" />
         <option value="$PROJECT_DIR$/src/java112/project4/AddEmployeeActionServlet.java" />
         <option value="$PROJECT_DIR$/src/java112/project4/AddEmployeeDisplayServlet.java" />
         <option value="$PROJECT_DIR$/src/java112/project4/AnalyzerDisplayServlet.java" />
+        <option value="$PROJECT_DIR$/src/java112/project4/EmployeeSearchResultServlet.java" />
+        <option value="$PROJECT_DIR$/src/java112/analyzer/UniqueTokenAnalyzer.java" />
+        <option value="$PROJECT_DIR$/src/java112/project4/Project4SEssionLavServlet.java" />
+        <option value="$PROJECT_DIR$/src/java112/project4/Project4SessionLabServlet.java" />
       </list>
     </option>
   </component>
@@ -332,19 +331,19 @@
     <property name="SearchEverywhereHistoryKey" value="ebug&#9;PSI&#9;JAVA://com.sun.org.apache.xml.internal.resolver.helpers.Debug" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/java112/project4" />
-      <recent name="$PROJECT_DIR$/src/java112/employee" />
-      <recent name="$PROJECT_DIR$/src/java112/labs4" />
-      <recent name="$PROJECT_DIR$/src/java112/project3" />
-      <recent name="$PROJECT_DIR$/src/java112/labs3" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/java112/project4" />
       <recent name="$PROJECT_DIR$/src/java112" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/java112/employee" />
       <recent name="$PROJECT_DIR$/src/java112/project3" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/java112/project4" />
+      <recent name="$PROJECT_DIR$/src/java112/employee" />
+      <recent name="$PROJECT_DIR$/src/java112/labs4" />
+      <recent name="$PROJECT_DIR$/src/java112/project3" />
+      <recent name="$PROJECT_DIR$/src/java112/labs3" />
     </key>
   </component>
   <component name="RunManager">
@@ -816,12 +815,12 @@
       <workItem from="1480730698074" duration="7611000" />
       <workItem from="1480777644687" duration="4869000" />
       <workItem from="1480824111559" duration="3365000" />
-      <workItem from="1480865060014" duration="7239000" />
+      <workItem from="1480865060014" duration="9843000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="263530000" />
+    <option name="totallyTimeSpent" value="266134000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="75" y="82" width="1839" height="998" extended-state="0" />
@@ -875,20 +874,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public_html/lab41.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/Lab33.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/java112/labs4/Lab41Servlet.java" />
     <entry file="file://$PROJECT_DIR$/src/java112/project3/TicTacPawServletR.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1005,13 +990,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java112/project4/JDBCInsertEmployee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/runInsertLab.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -1066,13 +1044,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="79">
           <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java112/project4/EmployeeSearchDisplayServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="9" column="52" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -1133,16 +1104,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java112/project4/EmployeeSearchResultServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="28" column="34" selection-start-line="28" selection-start-column="8" selection-end-line="29" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/com/sun/org/apache/xml/internal/resolver/helpers/Debug.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
@@ -1155,14 +1116,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="875">
           <caret line="95" column="7" selection-start-line="95" selection-start-column="7" selection-end-line="95" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java112/analyzer/UniqueTokenAnalyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="91" column="61" selection-start-line="91" selection-start-column="61" selection-end-line="91" selection-end-column="61" />
           <folding />
         </state>
       </provider>
@@ -1180,16 +1133,6 @@
         <state relative-caret-position="661">
           <caret line="271" column="1" selection-start-line="271" selection-start-column="1" selection-end-line="271" selection-end-column="1" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java112/project4/RunAnalyzerServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1217,13 +1160,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/java112/project4/EmployeeSearchDisplayServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="9" column="52" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/java112/project4/ApplicationStartup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
+        <state relative-caret-position="456">
           <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java112/project4/EmployeeSearchResultServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="46" column="41" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java112/analyzer/UniqueTokenAnalyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="90" column="30" selection-start-line="90" selection-start-column="30" selection-end-line="90" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java112/project4/JDBCInsertEmployee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="55" column="47" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java112/project4/Project4SEssionLavServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java112/project4/RunAnalyzerServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java112/project4/Project4SessionLabServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="42" column="48" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>

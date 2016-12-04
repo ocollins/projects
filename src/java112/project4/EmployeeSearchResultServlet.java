@@ -25,9 +25,7 @@ public class EmployeeSearchResultServlet extends HttpServlet {
      */
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //Debug!!
-        Debug debug = new Debug();
-        debug.writeDebug("In the Search results servlet");
+
         response.setContentType("text/html");
         //Create session variable
         HttpSession session = request.getSession(true);
@@ -42,8 +40,6 @@ public class EmployeeSearchResultServlet extends HttpServlet {
         ServletContext context = getServletContext();
         //Get SearchDirectory object from the ServletContext container
         employeeDirectory = (EmployeeDirectory) context.getAttribute("pr4EmployeeDirectory");
-        debug.writeDebug("In the Search result searchType " + request.getParameter("searchType"));
-        debug.writeDebug("In the Search result searchTerm " + request.getParameter("searchTerm"));
 
         //Get search type and search criteria from the EmployeeSearch form
         if(request.getParameter("searchType") != null && request.getParameter("searchTerm") != null) {
@@ -51,15 +47,12 @@ public class EmployeeSearchResultServlet extends HttpServlet {
             searchTerm = request.getParameter("searchTerm");
             search.setSearchType(searchType);
             search.setSearchTerm(searchTerm);
-            debug.writeDebug(searchType);
 
             if (searchType.equals("I")) {
-                debug.writeDebug("Search type is I");
                 //Call searchById method in the EmployeeDirectory class
                 employeeDirectory.searchById(search);
 
             } else if (searchType.equals("N")) {
-                debug.writeDebug("Search type is N");
                 employeeDirectory.searchByLastName(search);
 
             }

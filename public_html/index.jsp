@@ -47,6 +47,7 @@
     <p><a href="/java112/addEmplDispServlet">Add New Employee</a></p>    
     <p><a href="/java112/analyzerDispServlet">Analyze File</a></p> 
     <p><a href="/java112/JSTLLab1Servlet">JSTL Lab</a></p> 
+    <p><a href="/java112/project4SessionServlet">Session Lab</a></p> 
 
 </div>
 <!-- end main -->
