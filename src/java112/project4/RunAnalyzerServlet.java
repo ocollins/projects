@@ -16,9 +16,10 @@ import java112.analyzer.*;
         urlPatterns = { "/analyzeFileServlet" }
 )
 public class RunAnalyzerServlet extends HttpServlet {
+    Debug debug = new Debug();
 
     public void init() throws ServletException {
-        Debug debug = new Debug();
+
         debug.writeDebug("Init method In the Run Analyzer servlet");
 
     }
@@ -36,8 +37,7 @@ public class RunAnalyzerServlet extends HttpServlet {
         //Create session variable
         HttpSession session = request.getSession(true);
 
-        Debug debug = new Debug();
-        debug.writeDebug("In the Run analyzer servlet");
+        debug.writeDebug("In the doGet RunAnalyzerServlet");
 
         //Create a ServletContext object
         ServletContext context = getServletContext();
@@ -57,13 +57,15 @@ public class RunAnalyzerServlet extends HttpServlet {
         inputToAnalyzer[1] = (String) session.getAttribute("analyzerPropertiesFile");
 
         //Create a new AnalyzeFile object
-        AnalyzeFile analyzeFile = new AnalyzeFile();
+        //AnalyzeFile analyzeFile = new AnalyzeFile();
+
+        debug.writeDebug("Array to Analyzer " + inputToAnalyzer[0] + " " + inputToAnalyzer[1]);
 
         //Get AnalyzeFile object from the ServletContext
-       // analyzeFile = (AnalyzeFile) context.getAttribute("analyzeFile");
+        //analyzeFile = (AnalyzeFile) context.getAttribute("analyzeFile");
 
         //Call Analyzer main processor
-        analyzeFile.runAnalysis(inputToAnalyzer);
+        //analyzeFile.runAnalysis(inputToAnalyzer);
 
         //Get analyzer properties file from the context
         properties = (Properties) context.getAttribute("analyzerProperties");
@@ -71,39 +73,40 @@ public class RunAnalyzerServlet extends HttpServlet {
         //Get output directory name
         String outputDirectory = properties.getProperty("output.dir");
         //Get Summary file name
-        String summaryFile = properties.getProperty("output.file.summary");
+        String summaryFile = properties.getProperty("output.file.summaryh");
+
         //Save Summary file name in the session container
-        session.setAttribute("SummaryFile", "/java112/" + outputDirectory + summaryFile);
+        context.setAttribute("SummaryFile", "/java112/" + outputDirectory + summaryFile);
 
         //Get Unique words file name
-        String uniqueFile = properties.getProperty("output.file.unique");
+        String uniqueFile = properties.getProperty("output.file.uniqueh");
         //Save Unique words file name in the session container
-        session.setAttribute("UniqueFile", "/java112/" + outputDirectory + uniqueFile);
+        context.setAttribute("UniqueFile", "/java112/" + outputDirectory + uniqueFile);
 
         //Get Big words file name
         String bigFile = properties.getProperty("output.file.bigwords");
         //Save Big words file name in the session container
-        session.setAttribute("BigFile", "/java112/" + outputDirectory + bigFile);
+        context.setAttribute("BigFile", "/java112/" + outputDirectory + bigFile);
 
         //Get Token Count file name
         String tokenCountFile = properties.getProperty("output.file.token.count");
         //Save Token Count file name in the session container
-        session.setAttribute("TokenCountFile", "/java112/" + outputDirectory + tokenCountFile);
+        context.setAttribute("TokenCountFile", "/java112/" + outputDirectory + tokenCountFile);
 
         //Get Lexical Report file name
         String lexicalFile = properties.getProperty("output.file.lexical.report");
         //Save Lexical report file name in the session container
-        session.setAttribute("LexicalFile", "/java112/" + outputDirectory + lexicalFile);
+        context.setAttribute("LexicalFile", "/java112/" + outputDirectory + lexicalFile);
 
         //Get Token Size Report file name
         String tokenSizeFile = properties.getProperty("output.file.token.size");
         //Save Token Size report file name in the session container
-        session.setAttribute("TokenSizeFile", "/java112/" + outputDirectory + tokenSizeFile);
+        context.setAttribute("TokenSizeFile", "/java112/" + outputDirectory + tokenSizeFile);
 
         //Get Keywords Report file name
         String keywordsFile = properties.getProperty("output.file.keyword");
         //Save Keywords report file name in the session container
-        session.setAttribute("KeywordsFile", "/java112/" + outputDirectory + keywordsFile);
+        context.setAttribute("KeywordsFile", "/java112/" + outputDirectory + keywordsFile);
 
         //Get AnalyzeFile object from ServletContext object's attribute
 

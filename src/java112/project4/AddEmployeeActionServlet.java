@@ -17,8 +17,6 @@ import javax.servlet.annotation.*;
 public class AddEmployeeActionServlet extends HttpServlet {
 
     public void init() throws ServletException {
-        Debug debug = new Debug();
-        debug.writeDebug("Init method In the Add Employee Action servlet");
 
     }
     /**
@@ -37,9 +35,6 @@ public class AddEmployeeActionServlet extends HttpServlet {
         boolean addEmployeeSuccess = false;
         String message = " ";
 
-        Debug debug = new Debug();
-        debug.writeDebug("In the Add Employee Action servlet");
-
         //Create a ServletContext object
         ServletContext context = getServletContext();
         //Get EmployeeDirectory from ServletContext object's attribute
@@ -51,13 +46,10 @@ public class AddEmployeeActionServlet extends HttpServlet {
         String department = request.getParameter("department");
         String room = request.getParameter("room");
         String phone = request.getParameter("phone");
-        debug.writeDebug(firstName + lastName + sSN);
 
-        debug.writeDebug("addEmployeeSuccess bofore " + addEmployeeSuccess);
         //Call EmployeeDirectory to add the new employee to the DB
         addEmployeeSuccess = directory.addNewEmployee(firstName,
                                    lastName, sSN, department, room, phone);
-        debug.writeDebug("addEmployeeSuccess " + addEmployeeSuccess);
         if (addEmployeeSuccess) {
             message = "New Employee Added";
             session.setAttribute("feedbackMessage", message);

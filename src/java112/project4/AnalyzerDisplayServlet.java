@@ -27,9 +27,6 @@ public class AnalyzerDisplayServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html");
 
-        Debug debug = new Debug();
-        debug.writeDebug("In the Analyzer Display servlet");
-
         //Remove the old session
         HttpSession session = request.getSession(true);
         session.invalidate();
