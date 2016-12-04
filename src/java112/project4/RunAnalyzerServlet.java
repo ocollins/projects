@@ -54,10 +54,10 @@ public class RunAnalyzerServlet extends HttpServlet {
 
         //Get analyzer properties file name and store it in the Array to be passed
         //to the AnalyzeFile class
-        inputToAnalyzer[1] = (String) session.getAttribute("analyzerPropertiesFile");
+        inputToAnalyzer[1] = (String) context.getAttribute("analyzerPropertiesFile");
 
         //Create a new AnalyzeFile object
-        //AnalyzeFile analyzeFile = new AnalyzeFile();
+        AnalyzeFile analyzeFile = new AnalyzeFile();
 
         debug.writeDebug("Array to Analyzer " + inputToAnalyzer[0] + " " + inputToAnalyzer[1]);
 
@@ -65,7 +65,7 @@ public class RunAnalyzerServlet extends HttpServlet {
         //analyzeFile = (AnalyzeFile) context.getAttribute("analyzeFile");
 
         //Call Analyzer main processor
-        //analyzeFile.runAnalysis(inputToAnalyzer);
+        analyzeFile.runAnalysis(inputToAnalyzer);
 
         //Get analyzer properties file from the context
         properties = (Properties) context.getAttribute("analyzerProperties");

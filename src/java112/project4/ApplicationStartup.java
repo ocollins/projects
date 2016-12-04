@@ -67,6 +67,7 @@ public class ApplicationStartup extends HttpServlet {
 
             //Store the name of analyzer properties file in the ServletContext container
             context.setAttribute("analyzerPropertiesFile", analyzerFilePath);
+            debug.writeDebug("In the ApplStartup servlet analyzer properties file name " + analyzerFilePath);
 
         } catch (IOException iOException) {
             System.out.println("Cannot load the properties file");
