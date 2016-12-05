@@ -16,11 +16,8 @@ import java112.analyzer.*;
         urlPatterns = { "/analyzeFileServlet" }
 )
 public class RunAnalyzerServlet extends HttpServlet {
-    Debug debug = new Debug();
 
     public void init() throws ServletException {
-
-        debug.writeDebug("Init method In the Run Analyzer servlet");
 
     }
     /**
@@ -36,8 +33,6 @@ public class RunAnalyzerServlet extends HttpServlet {
         //response.setContentType("text/html");
         //Create session variable
         HttpSession session = request.getSession(true);
-
-        debug.writeDebug("In the doGet RunAnalyzerServlet");
 
         //Create a ServletContext object
         ServletContext context = getServletContext();
@@ -58,8 +53,6 @@ public class RunAnalyzerServlet extends HttpServlet {
 
         //Create a new AnalyzeFile object
         AnalyzeFile analyzeFile = new AnalyzeFile();
-
-        debug.writeDebug("Array to Analyzer " + inputToAnalyzer[0] + " " + inputToAnalyzer[1]);
 
         //Get AnalyzeFile object from the ServletContext
         //analyzeFile = (AnalyzeFile) context.getAttribute("analyzeFile");
@@ -109,7 +102,6 @@ public class RunAnalyzerServlet extends HttpServlet {
         context.setAttribute("KeywordsFile", "/java112/" + outputDirectory + keywordsFile);
 
         //Get AnalyzeFile object from ServletContext object's attribute
-
 
         String url = "/java112/DisplayAnalyzerReports.jsp";
         response.sendRedirect(url);

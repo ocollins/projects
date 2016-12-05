@@ -167,7 +167,7 @@
       <fileset dir="${static}/images"/>
     </copy>
 
-     <!-- copy the output to the build/output dir-->
+    <!-- copy the output to the build/output dir-->
     <copy todir="${build}/output">
       <fileset dir="${project_home}/output"/>
     </copy>

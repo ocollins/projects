@@ -74,7 +74,7 @@ public class UniqueTokenAnalyzer implements Analyzer{
                 printWriter.println(aToken);
             }
             //Create HTML file
-            writeOutputHtmlFile(outputDirectory);
+            writeOutputHtmlFile();
 
         } catch (IOException iOException) {
             System.out.println("Cannot write Unique Tokens Report file");
@@ -88,11 +88,13 @@ public class UniqueTokenAnalyzer implements Analyzer{
     /**
      *  Produce a List of Unique tokens.
      *  Write the list into an HTML file.
-     *  @param outputDirectory
      */
-    public void writeOutputHtmlFile(String outputDirectory) {
+    public void writeOutputHtmlFile() {
         //Get name of the output file from the properties file
         String outputFilePath = properties.getProperty("output.file.uniqueh");
+
+        //Get output directory
+        String outputDirectory = properties.getProperty("output.dir.web");
 
         try(BufferedWriter bufferedWriter =
                     new BufferedWriter(new FileWriter(outputDirectory + outputFilePath));

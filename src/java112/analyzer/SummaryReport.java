@@ -105,7 +105,7 @@ public class SummaryReport implements Analyzer{
         String outputFilePath = properties.getProperty("output.file.summaryh");
 
         //Get name of the output directory
-        String outputDirectory = properties.getProperty("output.dir");
+        String outputDirectory = properties.getProperty("output.dir.web");
 
         try(BufferedWriter bufferedWriterH =
                     new BufferedWriter(new FileWriter(outputDirectory + outputFilePath));
