@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f05e4e5a-50f6-4aca-bd56-b71476292a11" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/analyzer.properties" afterPath="$PROJECT_DIR$/config/analyzer.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java112/analyzer/SummaryReport.java" afterPath="$PROJECT_DIR$/src/java112/analyzer/SummaryReport.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java112/analyzer/UniqueTokenAnalyzer.java" afterPath="$PROJECT_DIR$/src/java112/analyzer/UniqueTokenAnalyzer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java112/analyzer/BigWordAnalyzer.java" afterPath="$PROJECT_DIR$/src/java112/analyzer/BigWordAnalyzer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java112/analyzer/KeywordAnalyzer.java" afterPath="$PROJECT_DIR$/src/java112/analyzer/KeywordAnalyzer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java112/analyzer/LexicalDensityAnalyzer.java" afterPath="$PROJECT_DIR$/src/java112/analyzer/LexicalDensityAnalyzer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java112/analyzer/TokenCountAnalyzer.java" afterPath="$PROJECT_DIR$/src/java112/analyzer/TokenCountAnalyzer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java112/analyzer/TokenSizeAnalyzer.java" afterPath="$PROJECT_DIR$/src/java112/analyzer/TokenSizeAnalyzer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java112/employee/EmployeeDirectory.java" afterPath="$PROJECT_DIR$/src/java112/employee/EmployeeDirectory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java112/project4/ApplicationStartup.java" afterPath="$PROJECT_DIR$/src/java112/project4/ApplicationStartup.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java112/project4/RunAnalyzerServlet.java" afterPath="$PROJECT_DIR$/src/java112/project4/RunAnalyzerServlet.java" />
     </list>
@@ -28,14 +32,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="ApplicationStartup.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/java112/project4/ApplicationStartup.java">
+      <file leaf-file-name="RunAnalyzerServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java112/project4/RunAnalyzerServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="127">
+              <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KeywordAnalyzer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java112/analyzer/KeywordAnalyzer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="87">
+              <caret line="103" column="7" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TokenSizeAnalyzer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/java112/analyzer/TokenSizeAnalyzer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="175" column="47" selection-start-line="175" selection-start-column="47" selection-end-line="175" selection-end-column="47" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -53,19 +77,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public_html/beanOneDemo.jsp" />
-        <option value="$PROJECT_DIR$/public_html/HttpRequestData.jsp" />
-        <option value="$PROJECT_DIR$/public_html/Project3_Properties.jsp" />
         <option value="$PROJECT_DIR$/config/project3.properties" />
         <option value="$PROJECT_DIR$/public_html/index.jsp" />
         <option value="$PROJECT_DIR$/src/java112/project3/PropertiesServlet.java" />
         <option value="$PROJECT_DIR$/keywords_input.txt" />
         <option value="$PROJECT_DIR$/src/java112/project3/HttpRequestData.java" />
         <option value="$PROJECT_DIR$/src/java112/project3/HttpRequestServlet.java" />
-        <option value="$PROJECT_DIR$/src/java112/analyzer/KeywordAnalyzer.java" />
         <option value="$PROJECT_DIR$/src/java112/analyzer/LexicalDensityTester.java" />
         <option value="$PROJECT_DIR$/src/java112/analyzer/AnalyzeFile.java" />
-        <option value="$PROJECT_DIR$/src/java112/analyzer/TokenSizeAnalyzer.java" />
         <option value="$PROJECT_DIR$/public_html/lab41.jsp" />
         <option value="$PROJECT_DIR$/src/java112/project3/TicTacPawServletR.java" />
         <option value="$PROJECT_DIR$/src/java112/project3/TicTacPawAIR.java" />
@@ -92,18 +111,23 @@
         <option value="$PROJECT_DIR$/src/java112/project4/Debug.java" />
         <option value="$PROJECT_DIR$/src/java112/employee/Search.java" />
         <option value="$PROJECT_DIR$/src/java112/employee/Employee.java" />
-        <option value="$PROJECT_DIR$/src/java112/employee/EmployeeDirectory.java" />
         <option value="$PROJECT_DIR$/src/java112/project4/AddEmployeeActionServlet.java" />
         <option value="$PROJECT_DIR$/src/java112/project4/AddEmployeeDisplayServlet.java" />
         <option value="$PROJECT_DIR$/src/java112/project4/AnalyzerDisplayServlet.java" />
         <option value="$PROJECT_DIR$/src/java112/project4/EmployeeSearchResultServlet.java" />
         <option value="$PROJECT_DIR$/src/java112/project4/Project4SEssionLavServlet.java" />
         <option value="$PROJECT_DIR$/src/java112/project4/Project4SessionLabServlet.java" />
-        <option value="$PROJECT_DIR$/config/analyzer.properties" />
         <option value="$PROJECT_DIR$/src/java112/analyzer/SummaryReport.java" />
         <option value="$PROJECT_DIR$/src/java112/analyzer/UniqueTokenAnalyzer.java" />
-        <option value="$PROJECT_DIR$/src/java112/project4/RunAnalyzerServlet.java" />
         <option value="$PROJECT_DIR$/src/java112/project4/ApplicationStartup.java" />
+        <option value="$PROJECT_DIR$/src/java112/employee/EmployeeDirectory.java" />
+        <option value="$PROJECT_DIR$/config/analyzer.properties" />
+        <option value="$PROJECT_DIR$/src/java112/analyzer/BigWordAnalyzer.java" />
+        <option value="$PROJECT_DIR$/src/java112/analyzer/KeywordAnalyzer.java" />
+        <option value="$PROJECT_DIR$/src/java112/analyzer/LexicalDensityAnalyzer.java" />
+        <option value="$PROJECT_DIR$/src/java112/analyzer/TokenCountAnalyzer.java" />
+        <option value="$PROJECT_DIR$/src/java112/project4/RunAnalyzerServlet.java" />
+        <option value="$PROJECT_DIR$/src/java112/analyzer/TokenSizeAnalyzer.java" />
       </list>
     </option>
   </component>
@@ -167,8 +191,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -184,6 +206,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="projects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="projects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="projects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java112" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project4" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -301,6 +345,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -798,11 +844,13 @@
       <workItem from="1480777644687" duration="4869000" />
       <workItem from="1480824111559" duration="3365000" />
       <workItem from="1480865060014" duration="14429000" />
+      <workItem from="1480978031927" duration="2248000" />
+      <workItem from="1481423371795" duration="7155000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="270720000" />
+    <option name="totallyTimeSpent" value="280123000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="75" y="82" width="1839" height="998" extended-state="0" />
@@ -814,9 +862,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15552996" sideWeight="0.1072261" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.094186045" sideWeight="0.89277387" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.094186045" sideWeight="0.89277387" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2656162" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -856,34 +904,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/java112/project3/TicTacPawServletR.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java112/project3/TicTacPawAIR.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java112/project3/TicTacPawAIOld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java112/project3/TicTacPawAI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/java112/project3/TicTacPawData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -1007,13 +1027,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java112/analyzer/BigWordAnalyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/java112/project3/TicTacPawServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="79">
@@ -1056,13 +1069,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java112/project4/Debug.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="902">
@@ -1071,18 +1077,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/project4.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/com/sun/org/apache/xml/internal/resolver/helpers/Debug.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1090,15 +1088,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8">
           <caret line="124" column="7" selection-start-line="124" selection-start-column="7" selection-end-line="124" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java112/employee/EmployeeDirectory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="271" column="1" selection-start-line="271" selection-start-column="1" selection-end-line="271" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1106,7 +1095,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="43" column="56" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1114,15 +1102,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
           <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java112/project4/AnalyzerDisplayServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/java112/project4/JDBCInsertEmployee.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-          <folding />
+          <caret line="55" column="47" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java112/project4/Project4SEssionLavServlet.java" />
+    <entry file="file://$PROJECT_DIR$/src/java112/project4/Project4SessionLabServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="25" column="52" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java112/analyzer/UniqueTokenAnalyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-197">
+          <caret line="75" column="30" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java112/analyzer/AnalyzeFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java112/project4/EmployeeSearchResultServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="46" column="41" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -1134,87 +1149,111 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java112/project4/EmployeeSearchResultServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/java112/employee/EmployeeDirectory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="46" column="41" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java112/project4/JDBCInsertEmployee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="55" column="47" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java112/project4/Project4SEssionLavServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java112/project4/Project4SessionLabServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="25" column="52" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/analyzer.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java112/analyzer/SummaryReport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="99" column="59" selection-start-line="99" selection-start-column="59" selection-end-line="99" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java112/analyzer/UniqueTokenAnalyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-197">
-          <caret line="75" column="30" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java112/project4/RunAnalyzerServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+        <state relative-caret-position="-1072">
+          <caret line="146" column="7" selection-start-line="146" selection-start-column="7" selection-end-line="146" selection-end-column="7" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java112/analyzer/AnalyzeFile.java">
+    <entry file="file://$PROJECT_DIR$/src/java112/project4/AnalyzerDisplayServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+        <state relative-caret-position="-87">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/project4.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java112/project4/ApplicationStartup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="54">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java112/project4/Debug.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/analyzer.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java112/analyzer/BigWordAnalyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="108" column="51" selection-start-line="108" selection-start-column="51" selection-end-line="108" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java112/analyzer/SummaryReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="100" column="74" selection-start-line="100" selection-start-column="74" selection-end-line="100" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java112/analyzer/LexicalDensityAnalyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="133" column="47" selection-start-line="133" selection-start-column="47" selection-end-line="133" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java112/analyzer/TokenCountAnalyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="105" column="43" selection-start-line="105" selection-start-column="43" selection-end-line="105" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java112/analyzer/KeywordAnalyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="103" column="7" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java112/project4/RunAnalyzerServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java112/analyzer/TokenSizeAnalyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="175" column="47" selection-start-line="175" selection-start-column="47" selection-end-line="175" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>

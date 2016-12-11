@@ -118,7 +118,7 @@ public class LexicalDensityAnalyzer implements Analyzer{
     */
     public void writeOutputFile(String inputFilePath) {
         //Get name of the output file from the properties file
-        String outputFilePath = properties.getProperty("output.file.lexical.report");
+        String outputFilePath = properties.getProperty("output.file.lexical.reportt");
         
         //Get name of the output directory
         String outputDirectory = properties.getProperty("output.dir");
@@ -131,6 +131,7 @@ public class LexicalDensityAnalyzer implements Analyzer{
                 new PrintWriter(bufferedWriter)) {
             printWriter.println("Lexical density of " + inputFilePath + " " +
                                 lexicalDensity + "%");
+            writeHTMLOutputFile(inputFilePath);
         } catch (IOException iOException) {
             System.out.println("Cannot write Lexical Density Report file");
             iOException.printStackTrace();  
@@ -138,6 +139,35 @@ public class LexicalDensityAnalyzer implements Analyzer{
             System.out.println("Error processig Lexical Density Report file");
             exception.printStackTrace();
         }    
+    }
+
+    /**
+     *  Caluculate % of lexical density
+     *  Write the report to the HTML output file
+     *  @param inputFilePath name of input file
+     */
+    public void writeHTMLOutputFile(String inputFilePath) {
+        //Get name of the output file from the properties file
+        String outputFilePath = properties.getProperty("output.file.lexical.reporth");
+
+        //Get name of the output directory
+        String outputDirectory = properties.getProperty("output.dir.web");
+
+        int lexicalDensity = getDensityPercent();
+
+        try(BufferedWriter bufferedWriter =
+                    new BufferedWriter(new FileWriter(outputDirectory + outputFilePath));
+            PrintWriter printWriter =
+                    new PrintWriter(bufferedWriter)) {
+            printWriter.println("Lexical density of " + inputFilePath + " " +
+                    lexicalDensity + "%");
+        } catch (IOException iOException) {
+            System.out.println("Cannot write Lexical Density Report file");
+            iOException.printStackTrace();
+        } catch (Exception exception) {
+            System.out.println("Error processig Lexical Density Report file");
+            exception.printStackTrace();
+        }
     }
 
     /**

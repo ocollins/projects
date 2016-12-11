@@ -58,15 +58,17 @@ public class BigWordAnalyzer implements Analyzer{
 
     /**
     *  Produce a List of Big Words.
-    *  Write the list into a file.
+    *  Write the list into a txt file.
     *  @param inputFilePath name of input file
     */
     public void writeOutputFile(String inputFilePath) {
         //Get name of the output file
-        String outputFilePath = properties.getProperty("output.file.bigwords");
+        String outputFilePath = properties.getProperty("output.file.bigwordst");
 
         //Get name of the output directory
         String outputDirectory = properties.getProperty("output.dir");
+
+
 
         //Write big words into a file    
         try(BufferedWriter bufferedWriter = 
@@ -76,6 +78,7 @@ public class BigWordAnalyzer implements Analyzer{
             for (String aToken : bigWords) {
                 printWriter.println(aToken);
             }
+            writeOutputHTMLFile(inputFilePath);
         } catch (IOException iOException) {
             System.out.println("Cannot write Big Words Report file");
             iOException.printStackTrace();  
@@ -83,6 +86,35 @@ public class BigWordAnalyzer implements Analyzer{
             System.out.println("Error processig Big Words Report file");
             exception.printStackTrace();
         }    
+    }
+
+    /**
+     *  Produce a List of Big Words.
+     *  Write the list into an html file.
+     *  @param inputFilePath name of input file
+     */
+    public void writeOutputHTMLFile(String inputFilePath) {
+        //Get name of the output file
+        String outputFilePath = properties.getProperty("output.file.bigwordsh");
+
+        //Get name of the output directory
+        String outputDirectory = properties.getProperty("output.dir.web");
+
+        //Write big words into a file
+        try(BufferedWriter bufferedWriter =
+                    new BufferedWriter(new FileWriter(outputDirectory + outputFilePath));
+            PrintWriter printWriter =
+                    new PrintWriter(bufferedWriter)) {
+            for (String aToken : bigWords) {
+                printWriter.println(aToken + "<br>");
+            }
+        } catch (IOException iOException) {
+            System.out.println("Cannot write Big Words Report file");
+            iOException.printStackTrace();
+        } catch (Exception exception) {
+            System.out.println("Error processig Big Words Report file");
+            exception.printStackTrace();
+        }
     }
      
 }

@@ -5,7 +5,6 @@ import java.util.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
-import java112.analyzer.*;
 
 /**
  *  Employee Management Application Startup Servlet for Project 4
@@ -20,7 +19,6 @@ import java112.analyzer.*;
 public class ApplicationStartup extends HttpServlet {
     Properties properties;
     Properties analyzerProperties;
-    Debug debug = new Debug();
 
     /**
     *  Servlet init method
@@ -39,7 +37,6 @@ public class ApplicationStartup extends HttpServlet {
         ServletContext context = getServletContext();
 
         EmployeeDirectory newEmployeeDirectory = null;
-        AnalyzeFile newAnalyzeFile = null;
 
         InputStream propertiesStream =
                 this.getClass().getResourceAsStream(propertiesFilePath);
@@ -53,17 +50,12 @@ public class ApplicationStartup extends HttpServlet {
             //Store properties object in the ServletContext container
             context.setAttribute("project4Properties", properties);
             context.setAttribute("analyzerProperties", analyzerProperties);
-            debug.writeDebug("In the ApplStartup servlet");
 
-            //Create new objects
+            //Create new EmployeeDirectory object
             newEmployeeDirectory = new EmployeeDirectory(properties);
-            //newAnalyzeFile = new AnalyzeFile();
 
             //Store new EmployeeDirectory object in the ServletContext container
             context.setAttribute("pr4EmployeeDirectory", newEmployeeDirectory);
-
-            //Store new AnalyzeFile object in the ServletContext container
-            //context.setAttribute("analyzeFile", newAnalyzeFile);
 
             //Store the name of analyzer properties file in the ServletContext container
             context.setAttribute("analyzerPropertiesFile", analyzerFilePath);
@@ -75,24 +67,6 @@ public class ApplicationStartup extends HttpServlet {
             System.out.println("Error loading properties file");
             exception.printStackTrace();
         }
-    }
-
-    /**
-     *  Handles HTTP GET requests.
-     *
-     *@param      request the HttpServletRequest object
-     *@param      response the HttpServletResponse object
-     *@exception  ServletException  if there is a Servlet failure
-     *@exception  IOException if there is an IO failure
-     */
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html");
-
-        // set the response type before sending data
-        PrintWriter  out  = response.getWriter();
-
-        out.close();
     }
 
 

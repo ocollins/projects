@@ -58,17 +58,18 @@ public class TokenCountAnalyzer implements Analyzer{
     *  @return tokenCounts
     */
     public Map getTokenCounts() {
+
         return tokenCounts;
     }
 
     /**
     *  Produce a List of Unique tokens counts.
-    *  Write the list into a file.
+    *  Write the list into a txt file.
     *  @param inputFilePath name of input file
     */
     public void writeOutputFile(String inputFilePath) {
         //Get name of the output file from the properties file
-        String outputFilePath = properties.getProperty("output.file.token.count");
+        String outputFilePath = properties.getProperty("output.file.token.countt");
         
         //Get name of the output directory
         String outputDirectory = properties.getProperty("output.dir");
@@ -80,6 +81,7 @@ public class TokenCountAnalyzer implements Analyzer{
             for (Map.Entry<String, Integer> entry : tokenCounts.entrySet()) {
                 printWriter.println(entry.getKey() + "\t" + entry.getValue());
             }
+            writeOutputHTMLFile(inputFilePath);
         } catch (IOException iOException) {
             System.out.println("Cannot write Unique Tokens Count Report file");
             iOException.printStackTrace();  
@@ -87,6 +89,34 @@ public class TokenCountAnalyzer implements Analyzer{
             System.out.println("Error processig Unique Tokens Count Report file");
             exception.printStackTrace();
         }    
+    }
+
+    /**
+     *  Produce a List of Unique tokens counts.
+     *  Write the list into an HTML file.
+     *  @param inputFilePath name of input file
+     */
+    public void writeOutputHTMLFile(String inputFilePath) {
+        //Get name of the output file from the properties file
+        String outputFilePath = properties.getProperty("output.file.token.counth");
+
+        //Get name of the output directory
+        String outputDirectory = properties.getProperty("output.dir.web");
+
+        try(BufferedWriter bufferedWriter =
+                    new BufferedWriter(new FileWriter(outputDirectory + outputFilePath));
+            PrintWriter printWriter =
+                    new PrintWriter(bufferedWriter)) {
+            for (Map.Entry<String, Integer> entry : tokenCounts.entrySet()) {
+                printWriter.println(entry.getKey() + "\t" + entry.getValue() +"<br>");
+            }
+        } catch (IOException iOException) {
+            System.out.println("Cannot write Unique Tokens Count Report HTML file");
+            iOException.printStackTrace();
+        } catch (Exception exception) {
+            System.out.println("Error processig Unique Tokens Count Report HTML file");
+            exception.printStackTrace();
+        }
     }
      
 }

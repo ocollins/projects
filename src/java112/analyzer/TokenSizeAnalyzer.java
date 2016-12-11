@@ -86,12 +86,12 @@ public class TokenSizeAnalyzer implements Analyzer{
 
     /**
     *  Produce a List of Token Sizes.
-    *  Write the list into a file.
+    *  Write the list into a txt file.
     *  @param inputFilePath name of input file
     */
     public void writeOutputFile(String inputFilePath) {
         //Get name of the output file
-        String outputFilePath = properties.getProperty("output.file.token.size");
+        String outputFilePath = properties.getProperty("output.file.token.sizet");
 
         //Get name of the output directory
         String outputDirectory = properties.getProperty("output.dir");
@@ -128,6 +128,7 @@ public class TokenSizeAnalyzer implements Analyzer{
                 }
                 printWriter.println();
             }
+            writeOutputHTMLFile(inputFilePath);
             
         } catch (IOException iOException) {
             System.out.println("Cannot write Token Sizes file");
@@ -136,6 +137,60 @@ public class TokenSizeAnalyzer implements Analyzer{
             System.out.println("Error processig Token Sizes file");
             exception.printStackTrace();
         }    
+    }
+
+    /**
+     *  Produce a List of Token Sizes.
+     *  Write the list into an HTML file.
+     *  @param inputFilePath name of input file
+     */
+    public void writeOutputHTMLFile(String inputFilePath) {
+        //Get name of the output file
+        String outputFilePath = properties.getProperty("output.file.token.sizeh");
+
+        //Get name of the output directory
+        String outputDirectory = properties.getProperty("output.dir.web");
+
+        //Build token lengths histogram
+        Map<Integer, String> histoMap = buildHistogram();
+
+        //Write token sizes into a file
+        try(BufferedWriter bufferedWriter =
+                    new BufferedWriter(new FileWriter(outputDirectory + outputFilePath));
+            PrintWriter printWriter =
+                    new PrintWriter(bufferedWriter)) {
+            //Write out the token lengths/count part of the report
+            for (Map.Entry<Integer, Integer> entry : tokenSizes.entrySet()) {
+                printWriter.println( entry.getKey() + "\t" + entry.getValue() + "<br>");
+            }
+
+            printWriter.println("\n" + "Horizontal histogram of the results" + "\n" + "<br>");
+            //Write out the horizontal histogram part of the report
+            for (Map.Entry <Integer, String> entry : histoMap.entrySet()) {
+                printWriter.println(entry.getKey() + " " + entry.getValue() + "<br>");
+            }
+
+            printWriter.println("\n" + "Vertical histogram of the results" + "\n" + "<br>");
+            //Write out the vertical histogram part of the report
+            for (int y = 71; y >= 0; y --) {
+                //System.out.println("y " + y);
+                for (int x = 0; x < 25; x ++) {
+                    if (verticalHistogram[x][y] == null) {
+                        printWriter.print("   ");
+                    } else {
+                        printWriter.print(verticalHistogram[x][y] + " ");
+                    }
+                }
+                printWriter.println("<br>");
+            }
+
+        } catch (IOException iOException) {
+            System.out.println("Cannot write Token Sizes file");
+            iOException.printStackTrace();
+        } catch (Exception exception) {
+            System.out.println("Error processig Token Sizes file");
+            exception.printStackTrace();
+        }
     }
 
     /**

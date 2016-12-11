@@ -100,14 +100,15 @@ public class KeywordAnalyzer implements Analyzer{
 
         return keywordMap;
     }
+
     /**
     *  Produce a List of keywords and their positions in the file.
-    *  Write the list into a file.
+    *  Write the list into a txt file.
     *  @param inputFilePath name of input file
     */
     public void writeOutputFile(String inputFilePath) {
         //Get name of the output file from the properties file
-        String outputFilePath = properties.getProperty("output.file.keyword");
+        String outputFilePath = properties.getProperty("output.file.keywordt");
 
         //Get name of the output directory
         String outputDirectory = properties.getProperty("output.dir");
@@ -127,6 +128,8 @@ public class KeywordAnalyzer implements Analyzer{
             exception.printStackTrace();
         }    
     }
+
+
 
     /**
      *  Method that will evaluate number of members in the ArrayList in the Map for each keyword;
