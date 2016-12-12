@@ -7,7 +7,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
 /**
- * Employee Search Display Servlet Java112 Project 4
+ * Add employee action Servlet Java112 Project 4
  * @author Olena Collins
  */
 @WebServlet(

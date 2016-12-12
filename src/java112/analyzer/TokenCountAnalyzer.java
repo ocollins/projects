@@ -108,7 +108,7 @@ public class TokenCountAnalyzer implements Analyzer{
             PrintWriter printWriter =
                     new PrintWriter(bufferedWriter)) {
             for (Map.Entry<String, Integer> entry : tokenCounts.entrySet()) {
-                printWriter.println(entry.getKey() + "\t" + entry.getValue() +"<br>");
+                printWriter.println(entry.getKey() + "%nbsp; %nbsp;" + entry.getValue() +"<br>");
             }
         } catch (IOException iOException) {
             System.out.println("Cannot write Unique Tokens Count Report HTML file");

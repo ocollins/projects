@@ -167,22 +167,27 @@ public class TokenSizeAnalyzer implements Analyzer{
             printWriter.println("\n" + "Horizontal histogram of the results" + "\n" + "<br>");
             //Write out the horizontal histogram part of the report
             for (Map.Entry <Integer, String> entry : histoMap.entrySet()) {
-                printWriter.println(entry.getKey() + " " + entry.getValue() + "<br>");
+                printWriter.println(entry.getKey() + "&nbsp;" + entry.getValue() + "<br>");
             }
 
-            printWriter.println("\n" + "Vertical histogram of the results" + "\n" + "<br>");
+            printWriter.println("<br>" + "\n" + "Vertical histogram of the results" + "\n" + "<br>");
             //Write out the vertical histogram part of the report
             for (int y = 71; y >= 0; y --) {
-                //System.out.println("y " + y);
                 for (int x = 0; x < 25; x ++) {
                     if (verticalHistogram[x][y] == null) {
-                        printWriter.print("   ");
+                        printWriter.print("&nbsp; &nbsp; &nbsp;");
                     } else {
-                        printWriter.print(verticalHistogram[x][y] + " ");
+                        if (y == 0) {
+                            printWriter.print(verticalHistogram[x][y] + "&nbsp;");
+                        } else {
+                            printWriter.print(verticalHistogram[x][y] + "&nbsp;&nbsp;");
+                        }
                     }
+
                 }
                 printWriter.println("<br>");
             }
+
 
         } catch (IOException iOException) {
             System.out.println("Cannot write Token Sizes file");

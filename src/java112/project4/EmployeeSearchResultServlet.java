@@ -26,7 +26,6 @@ public class EmployeeSearchResultServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        response.setContentType("text/html");
         //Create session variable
         HttpSession session = request.getSession(true);
         //Create an EmployeeDirectory variable
